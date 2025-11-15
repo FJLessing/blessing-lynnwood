@@ -1,1 +1,182 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+@import 'tailwindcss';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Satisfy&display=swap');
+
+/* Design System CSS Variables */
+@layer base {
+  :root {
+    /* Font Families */
+    --font-family-primary: 'Outfit', sans-serif;
+    --font-family-secondary: 'Satisfy', cursive;
+
+    /* Font Sizes */
+    --font-size-heading-1: 40px;
+    --font-size-heading-2: 32px;
+    --font-size-heading-3: 28px;
+    --font-size-subheading-1: 24px;
+    --font-size-subheading-2: 18px;
+    --font-size-body-1: 16px;
+    --font-size-body-2: 14px;
+    --font-size-button: 16px;
+
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+
+    /* Colors - Primary */
+    --color-primary-60: #222e0d;
+    --color-primary-50: #364025;
+
+    /* Colors - Sage Green */
+    --color-sage-60: #626744;
+    --color-sage-50: #899064;
+    --color-sage-40: #b1b986;
+    --color-sage-30: #d9e2ab;
+    --color-sage-20: #f6ffc9;
+
+    /* Colors - Lime Green */
+    --color-lime-60: #64734a;
+    --color-lime-50: #94a676;
+    --color-lime-40: #c7d9a9;
+    --color-lime-30: #f0ffd8;
+
+    /* Colors - Yellow-Green */
+    --color-yellow-green-60: #596234;
+    --color-yellow-green-50: #899556;
+    --color-yellow-green-40: #b9c87c;
+    --color-yellow-green-30: #eafba6;
+    --color-yellow-green-20: #f5ffcf;
+
+    /* Colors - Gold/Bronze */
+    --color-gold-60: #786336;
+    --color-gold-50: #ab915a;
+    --color-gold-40: #dec285;
+    --color-gold-30: #ffe4ac;
+    --color-gold-20: #fff0d1;
+
+    /* Colors - Tan/Beige */
+    --color-tan-60: #554937;
+    --color-tan-50: #7d6e55;
+    --color-tan-40: #a69476;
+    --color-tan-30: #cfbb9a;
+    --color-tan-20: #f8e3c0;
+  }
+}
+
+/* Typography Utility Classes */
+@layer utilities {
+  /* Heading Styles - Primary Font (Outfit) */
+  .text-heading-1 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-heading-1);
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+  }
+
+  .text-heading-2 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-heading-3 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  /* Heading Styles - Accent Font (Satisfy) */
+  .text-heading-1-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-heading-1);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-heading-2-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-heading-3-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  /* Subheading Styles - Primary Font (Outfit) */
+  .text-subheading-1 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-subheading-1);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-subheading-2 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-subheading-2);
+    font-weight: var(--font-weight-medium);
+    line-height: 24px;
+  }
+
+  /* Subheading Styles - Accent Font (Satisfy) */
+  .text-subheading-1-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-subheading-1);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-subheading-2-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-subheading-2);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  /* Body Text Styles - Primary Font (Outfit) */
+  .text-body-1 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body-1);
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+  }
+
+  .text-body-2 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body-2);
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+  }
+
+  /* Body Text Styles - Accent Font (Satisfy) */
+  .text-body-1-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-body-1);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  .text-body-2-accent {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-body-2);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+
+  /* Button Text Style */
+  .text-button {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+  }
+}
