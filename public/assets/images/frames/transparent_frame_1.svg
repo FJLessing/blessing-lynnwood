@@ -1,0 +1,41 @@
+<svg width="854" height="452" viewBox="0 0 854 452" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_din_152_1816)">
+<rect x="4" width="846" height="444" rx="20" fill="#364025" fill-opacity="0.5" shape-rendering="crispEdges"/>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="Satisfy" font-size="40" letter-spacing="0em"><tspan x="362.352" y="63.9062">About us</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="Outfit" font-size="18" font-weight="500" letter-spacing="0em"><tspan x="164.014" y="142.66">Tucked away in the quiet, tree-lined streets of Lynnwood Gardens, </tspan><tspan x="118.17" y="166.66">Blessing@Lynnwood is the perfect spot to unwind after a busy day in Pretoria. &#10;</tspan><tspan x="427" y="190.66">&#10;</tspan><tspan x="116.447" y="214.66">Whether you&#x2019;re here for a school event, a night at the theatre, or an important </tspan><tspan x="157.896" y="238.66">business trip, you&#x2019;ll find everything you need for a comfortable stay. &#10;</tspan><tspan x="427" y="262.66">&#10;</tspan><tspan x="135.511" y="286.66">Enjoy your own space with self-catering facilities, great Wi-Fi, and secure </tspan><tspan x="227.576" y="310.66">parking. It&#x2019;s easy, relaxed, and just feels like home.</tspan></text>
+<rect x="325" y="356" width="204" height="44" rx="22" fill="#899064"/>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="Outfit" font-size="16" letter-spacing="0em"><tspan x="345" y="383.92">You can find us here</tspan></text>
+<path d="M507 378C507.55 378 508.021 377.804 508.413 377.413C508.804 377.021 509 376.55 509 376C509 375.45 508.804 374.979 508.413 374.588C508.021 374.196 507.55 374 507 374C506.45 374 505.979 374.196 505.588 374.588C505.196 374.979 505 375.45 505 376C505 376.55 505.196 377.021 505.588 377.413C505.979 377.804 506.45 378 507 378ZM507 385.35C509.033 383.483 510.542 381.787 511.525 380.262C512.508 378.738 513 377.383 513 376.2C513 374.383 512.421 372.896 511.262 371.737C510.104 370.579 508.683 370 507 370C505.317 370 503.896 370.579 502.737 371.737C501.579 372.896 501 374.383 501 376.2C501 377.383 501.492 378.738 502.475 380.262C503.458 381.787 504.967 383.483 507 385.35ZM507 388C504.317 385.717 502.312 383.596 500.988 381.637C499.663 379.679 499 377.867 499 376.2C499 373.7 499.804 371.708 501.413 370.225C503.021 368.742 504.883 368 507 368C509.117 368 510.979 368.742 512.588 370.225C514.196 371.708 515 373.7 515 376.2C515 377.867 514.337 379.679 513.012 381.637C511.688 383.596 509.683 385.717 507 388Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_din_152_1816" x="0" y="0" width="854" height="452" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_152_1816"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_152_1816"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="9534" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="effect2_innerShadow_152_1816" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect3_noise_152_1816">
+<feMergeNode in="effect2_innerShadow_152_1816" />
+<feMergeNode in="color1" />
+</feMerge>
+<feBlend mode="normal" in="effect3_noise_152_1816" in2="effect1_dropShadow_152_1816" result="effect3_noise_152_1816"/>
+</filter>
+</defs>
+</svg>

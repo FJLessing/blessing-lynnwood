@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Home",
+    "yourStay": "Your Stay",
+    "gallery": "Gallery",
+    "contact": "Contact Us",
+    "checkAvailability": "Check availability"
+  },
+  "hero": {
+    "title": "Make it home.",
+    "subtitle": "Come share in the welcoming, peaceful comfort of our Blessing in the picturesque Lynnwood Gardens Estate.",
+    "bookNow": "Book your stay now"
+  },
+  "about": {
+    "title": "About us",
+    "description": "Tucked away in the quiet, tree-lined streets of Lynnwood Gardens, Blessing@Lynnwood is the perfect spot to unwind after a busy day in Pretoria. Whether you're here for a school event, a night at the theatre, or an important business trip, you'll find everything you need for a comfortable stay. Enjoy your own space with self-catering facilities, great Wi-Fi, and secure parking. It's easy, relaxed, and just feels like home.",
+    "findUs": "You can find us here"
+  },
+  "gallery": {
+    "title": "Your own",
+    "subtitle": "space"
+  },
+  "amenities": {
+    "title": "Our amenities include...",
+    "kitchenette": {
+      "title": "Kitchenette",
+      "description": "A a fully equipped kitchenette where you can prepare your meals."
+    },
+    "entertainment": {
+      "title": "Entertainment",
+      "description": "Diigital streaming of the most popular channels for your your enjoyment."
+    },
+    "apartment": {
+      "title": "Apartment",
+      "description": "Enjoy the privacy of your own multi-room apartment, perfect for an undisturbed relaxing stay."
+    },
+    "wifi": {
+      "title": "WiFi",
+      "description": "Fast, free internet access to keep you connected and comfortable."
+    },
+    "barbeque": {
+      "title": "Barbeque",
+      "description": "Make the most of warm days with your dedicated barbeque space."
+    },
+    "parking": {
+      "title": "Parking",
+      "description": "We have safe and secure parking for your vehicle."
+    }
+  },
+  "booking": {
+    "title": "Ready to book your stay?",
+    "subtitle": "Feel free to check our availability below and book easily.",
+    "legend": {
+      "booked": "booked",
+      "available": "available"
+    },
+    "calendar": {
+      "days": {
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat"
+      }
+    },
+    "bookNow": "Book your stay now"
+  },
+  "reviews": {
+    "title": "Our previous guests have said...",
+    "items": [
+      {
+        "title": "Exceptional",
+        "text": "This spacious establishment that offers a seperate lounge, seperate toilet and a full bathroom, is in a safe and good area, close to highways, shops and restaurants...",
+        "author": "Laans",
+        "date": "March 2025"
+      },
+      {
+        "title": "Could not have asked for more",
+        "text": "An exceptionally spacious and well-fitted-out apartment in an upmarket and secure residential area. I had a lovely stay with very hospitable hosts. Everything and more than I needed. Could not have asked for better!",
+        "author": "Deon",
+        "date": "March 2025"
+      },
+      {
+        "title": "Superb",
+        "text": "Baie lekker verblyf! Skoon, veilig en gerieflik.",
+        "author": "Gert",
+        "date": "August 2024"
+      }
+    ]
+  },
+  "nearby": {
+    "title": "We are located close to...",
+    "locations": {
+      "atterbury": "Fairtree Atterbury Theatre",
+      "lynnwoodBridge": "Lynnwood Bridge",
+      "botanicalGardens": "Pretoria National Botanical Gardens",
+      "csir": "CSIR",
+      "laerskoolLynnwood": "Laerskool Lynnwood",
+      "menloPark": "Die Hoërskool Menlo Park",
+      "unionBuildings": "Union Buildings",
+      "brooklynMall": "Brooklyn Mall",
+      "menlynMall": "Menlyn Mall",
+      "voortrekkerMonument": "Voortrekker Monument",
+      "timesSquare": "SunBet at Times Square Arena",
+      "villageWalk": "Village Walk Hazelwood",
+      "lynnridgeWalk": "Lynnridge Walk",
+      "universityOfPretoria": "University of Pretoria",
+      "loftusPark": "Loftus Park",
+      "glenfairBoulevard": "Glenfair Boulevard",
+      "pretoriaCountryClub": "Pretoria Country Club"
+    }
+  },
+  "footer": {
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookies Settings"
+    }
+  },
+  "contactForm": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message"
+  }
+}

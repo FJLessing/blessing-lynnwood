@@ -1,3 +1,5 @@
+# Blessing Lynnwood - Copilot Instructions
+
 You are an expert in TypeScript, Angular, and scalable web application development. You write maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
 ## TypeScript Best Practices
@@ -20,28 +22,81 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 
 - Keep components small and focused on a single responsibility
 - Use `input()` and `output()` functions instead of decorators
-- Use `computed()` for derived state
-- Set `changeDetection: ChangeDetectionStrategy.OnPush` in `@Component` decorator
-- Prefer inline templates for small components
-- Prefer Reactive forms instead of Template-driven ones
-- Do NOT use `ngClass`, use `class` bindings instead
-- Do NOT use `ngStyle`, use `style` bindings instead
+- Set `changeDetection: ChangeDetectionStrategy.OnPush` always
+- Use signals for local state; `computed()` for derived state
+- Use `@if`, `@for`, `@switch` native control flow (no `*ngIf`, `*ngFor`, `*ngSwitch`)
+- Bind classes/styles directly (no `ngClass`, `ngStyle`)
+- Prefer external templates for pages; inline for small components
+- Use `TranslateModule` when component uses i18n pipes
 
-## State Management
+### State Management
 
-- Use signals for local component state
-- Use `computed()` for derived state
-- Keep state transformations pure and predictable
-- Do NOT use `mutate` on signals, use `update` or `set` instead
+- Signals: use `set()` or `update()` — never `mutate()`
+- Local state in components; share via services only if truly needed
 
-## Templates
+### Services
 
-- Keep templates simple and avoid complex logic
-- Use native control flow (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`, `*ngSwitch`
-- Use the async pipe to handle observables
+- Use `providedIn: 'root'` for singletons; inject via `inject()`
+- Example: `private translate = inject(TranslateService);`
 
-## Services
+### Images
 
-- Design services around a single responsibility
-- Use the `providedIn: 'root'` option for singleton services
-- Use the `inject()` function instead of constructor injection
+- Use `NgOptimizedImage` for static images (not inline base64)
+- Path assets from `public/` folder
+
+### i18n & Translations
+
+- **Display-only components**: Import `TranslateModule`; use `{{ 'key' | translate }}` in templates—no service injection needed
+- **Language switching**: Only inject `TranslateService` when changing language programmatically (e.g., Header's language toggle)
+- **Translation files**: `public/assets/i18n/{en,af}.json` organized by namespace (nav, hero, amenities, etc.)
+- **Initialization**: Root App component sets fallback language and default language in constructor
+
+## Common Workflows
+
+### Add a New Page
+
+1. Create `src/app/pages/{page-name}/` with `.ts`, `.html`, `.css` files
+2. Export component in same directory
+3. Add route to `app.routes.ts`
+4. Add i18n keys to `public/assets/i18n/{en,af}.json`
+
+### Add a New Component
+
+1. Create `src/app/components/{component-name}/` with `.ts`, `.html`, `.css`
+2. Use Tailwind classes in template; leave `.css` empty unless component-scoped styles needed
+3. Import in parent component's `imports` array
+
+### Add Translation Keys
+
+- Add keys to both `en.json` and `af.json` in `public/assets/i18n/`
+- Use in template: `{{ 'section.key' | translate }}`
+
+### Run & Build
+
+- **Dev**: `npm start` (or `bun start`) → http://localhost:4200
+- **Test**: `npm test` (Karma + Jasmine)
+- **Build**: `npm build` → `dist/`
+
+## Project-Specific Conventions
+
+- **Naming**: Components use PascalCase class names (e.g., `export class Header { }`)
+- **Selectors**: `app-*` prefix (e.g., `selector: 'app-header'`)
+- **File layout**: Flat structure within each folder (no subdirectories for components)
+- **Translation namespaces**: Use dot notation (`nav.home`, `footer.contact`)
+- **Colors**: Always use Tailwind custom tokens from `@theme` (e.g., `bg-primary-50`, `text-sage-40`)
+- **Responsive**: Use Tailwind breakpoints; design is component-driven, not page-locked
+
+## Common Pitfalls to Avoid
+
+- Don't add empty `standalone: true` to decorators
+- Don't use `@HostBinding` / `@HostListener` — use `host` object instead
+- Don't commit CSS to component `.css` files unless truly scoped; use Tailwind
+- Don't forget to add translation keys to both language files
+- Don't use `@Input()` / `@Output()` decorators — use `input()` / `output()` functions
+- Don't use `ngClass` / `ngStyle` — use class/style bindings
+
+## Documentation & Testing
+
+- Keep docs in code comments near implementation
+- Write specs in `.spec.ts` files; use Karma + Jasmine
+- Don't generate `.md` files unless explicitly requested

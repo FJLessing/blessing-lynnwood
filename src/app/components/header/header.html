@@ -1,0 +1,31 @@
+<header [class]="isStickyHeader() ? 'header-transparent' : 'header-solid'" class="w-[100vw]">
+  <div class="flex items-center justify-between w-full">
+    <!-- Logo -->
+    <img src="assets/images/logo.svg" alt="Blessing Lynnwood Logo" class="h-[70px] w-auto object-contain" />
+
+    <!-- Navigation and CTA -->
+    <div class="flex max-w-[50vw] items-center gap-10">
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-10">
+        <a routerLink="/" class="text-body-1 text-white transition-colors hover:text-sage-50">
+          {{ 'nav.home' | translate }}
+        </a>
+        <a routerLink="/your-stay" class="text-body-1 text-white transition-colors hover:text-sage-50">
+          {{ 'nav.yourStay' | translate }}
+        </a>
+        <a routerLink="/gallery" class="text-body-1 text-white transition-colors hover:text-sage-50">
+          {{ 'nav.gallery' | translate }}
+        </a>
+        <a routerLink="/contact" class="text-body-1 text-white transition-colors hover:text-sage-50">
+          {{ 'nav.contact' | translate }}
+        </a>
+      </nav>
+
+      <!-- Check Availability Button -->
+      <button
+        class="text-button rounded-full border-2 border-sage-50 px-6 py-2.5 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60">
+        {{ 'nav.checkAvailability' | translate }}
+      </button>
+    </div>
+  </div>
+</header>

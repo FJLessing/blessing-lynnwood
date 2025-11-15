@@ -1,0 +1,18 @@
+.decoration-line-up {
+  --line-length: 70px;
+
+  position: relative;
+  margin-top: var(--line-length);
+}
+
+.decoration-line-up::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 1px);
+  top: 0;
+  transform: translateY(-100%);
+  display: block;
+  width: 2px;
+  height: var(--line-length);
+  border-left: 2px solid;
+}

@@ -1,0 +1,25 @@
+@layer components {
+  .header-transparent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.5) 23.33%, rgba(37, 37, 37, 0) 100%);
+    padding: 1.25rem 2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .header-solid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-neutral-dark);
+    padding: 1.25rem 2rem;
+    position: static;
+  }
+}

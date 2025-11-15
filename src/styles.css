@@ -1,69 +1,72 @@
-/* src/styles.css */
 @import 'tailwindcss';
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Satisfy&display=swap');
+@theme {
+  /* Font Families */
+  --font-family-primary: 'Outfit', sans-serif;
+  --font-family-secondary: 'Satisfy', cursive;
 
-/* Design System CSS Variables */
-@layer base {
-  :root {
-    /* Font Families */
-    --font-family-primary: 'Outfit', sans-serif;
-    --font-family-secondary: 'Satisfy', cursive;
+  /* Colors - Primary */
+  --color-primary-60: #222e0d;
+  --color-primary-50: #364025;
+  --color-primary: #364025;
 
-    /* Font Sizes */
-    --font-size-heading-1: 40px;
-    --font-size-heading-2: 32px;
-    --font-size-heading-3: 28px;
-    --font-size-subheading-1: 24px;
-    --font-size-subheading-2: 18px;
-    --font-size-body-1: 16px;
-    --font-size-body-2: 14px;
-    --font-size-button: 16px;
+  /* Colors - Light and Dark Neutrals */
+  --color-neutral-dark: #1e1e1e;
+  --color-neutral-light: #f5f5f5;
 
-    /* Font Weights */
-    --font-weight-light: 300;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
+  /* Colors - Sage Green */
+  --color-sage-60: #626744;
+  --color-sage-50: #899064;
+  --color-sage-40: #b1b986;
+  --color-sage-30: #d9e2ab;
+  --color-sage-20: #f6ffc9;
+  --color-sage: #899064;
 
-    /* Colors - Primary */
-    --color-primary-60: #222e0d;
-    --color-primary-50: #364025;
+  /* Colors - Lime Green */
+  --color-lime-60: #64734a;
+  --color-lime-50: #94a676;
+  --color-lime-40: #c7d9a9;
+  --color-lime-30: #f0ffd8;
+  --color-lime: #94a676;
 
-    /* Colors - Sage Green */
-    --color-sage-60: #626744;
-    --color-sage-50: #899064;
-    --color-sage-40: #b1b986;
-    --color-sage-30: #d9e2ab;
-    --color-sage-20: #f6ffc9;
+  /* Colors - Yellow-Green */
+  --color-yellow-green-60: #596234;
+  --color-yellow-green-50: #899556;
+  --color-yellow-green-40: #b9c87c;
+  --color-yellow-green-30: #eafba6;
+  --color-yellow-green-20: #f5ffcf;
+  --color-yellow-green: #b9c87c;
 
-    /* Colors - Lime Green */
-    --color-lime-60: #64734a;
-    --color-lime-50: #94a676;
-    --color-lime-40: #c7d9a9;
-    --color-lime-30: #f0ffd8;
+  /* Colors - Gold/Bronze */
+  --color-gold-60: #786336;
+  --color-gold-50: #ab915a;
+  --color-gold-40: #dec285;
+  --color-gold-30: #ffe4ac;
+  --color-gold-20: #fff0d1;
+  --color-gold: #ab915a;
 
-    /* Colors - Yellow-Green */
-    --color-yellow-green-60: #596234;
-    --color-yellow-green-50: #899556;
-    --color-yellow-green-40: #b9c87c;
-    --color-yellow-green-30: #eafba6;
-    --color-yellow-green-20: #f5ffcf;
+  /* Colors - Tan/Beige */
+  --color-tan-60: #554937;
+  --color-tan-50: #7d6e55;
+  --color-tan-40: #a69476;
+  --color-tan-30: #cfbb9a;
+  --color-tan-20: #f8e3c0;
+  --color-tan: #cfbb9a;
 
-    /* Colors - Gold/Bronze */
-    --color-gold-60: #786336;
-    --color-gold-50: #ab915a;
-    --color-gold-40: #dec285;
-    --color-gold-30: #ffe4ac;
-    --color-gold-20: #fff0d1;
+  /* Font Sizes */
+  --font-size-heading-1: 40px;
+  --font-size-heading-2: 32px;
+  --font-size-heading-3: 28px;
+  --font-size-subheading-1: 24px;
+  --font-size-subheading-2: 18px;
+  --font-size-body-1: 16px;
+  --font-size-body-2: 14px;
+  --font-size-button: 16px;
 
-    /* Colors - Tan/Beige */
-    --color-tan-60: #554937;
-    --color-tan-50: #7d6e55;
-    --color-tan-40: #a69476;
-    --color-tan-30: #cfbb9a;
-    --color-tan-20: #f8e3c0;
-  }
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
 }
 
 /* Typography Utility Classes */
@@ -178,5 +181,37 @@
     font-size: var(--font-size-button);
     font-weight: var(--font-weight-regular);
     line-height: 1;
+  }
+}
+
+/* Global Base Styles */
+@layer base {
+  html,
+  body {
+    font-family: var(--font-family-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-secondary);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 }
