@@ -1,16 +1,39 @@
 <main class="w-full min-h-full">
+  <!-- Hero Section -->
   <section class="hero flex items-center justify-center w-full mx-auto bg-neutral-dark text-white">
-    <img src="assets/images/hero-image.webp" alt="Blessing Lynnwood Hero Image"
-      class="basis-1/2 w-1/2 h-auto object-cover">
+    <img
+      src="assets/images/hero-image.webp"
+      alt="Blessing Lynnwood Hero Image"
+      class="basis-1/2 w-1/2 h-auto object-cover"
+    />
     <div class="basis-1/2 pt-15 px-8 text-right flex flex-col items-start">
       <h1 class="text-5xl font-bold text-white my-8 md:-ml-12">{{ 'hero.title' | translate }}</h1>
       <div class="w-1/2">
         <p>{{ 'hero.subtitle' | translate }}</p>
       </div>
-      <button
-        class="decoration-line-up mt-6 rounded-full border-2 border-sage text-sage px-6 py-2.5 text-button font-semibold hover:bg-sage-60 hover:text-white transition-colors">
+      <a
+        href="#booking"
+        class="decoration-line-up block mt-6 rounded-full border-2 border-sage text-sage px-6 py-2.5 text-button font-semibold transition-colors"
+      >
         {{ 'hero.bookNow' | translate }}
-      </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-us shadow-elevation-outer relative bg-cover bg-center bg-no-repeat text-white min-h-screen flex justify-center items-center">
+    <img
+      src="assets/images/backdrop-grass.webp"
+      alt="Image of a beautiful grassy hedge."
+      class="absolute inset-0 min-w-full min-h-full object-cover -z-10"
+    />
+    <div class="bg-black/50 absolute inset-0 w-full h-full object-cover -z-10"></div>
+    <div class="shadow-elevation bg-sage-transparent rounded-2xl m-auto p-8 text-center">
+      <h2 class="text-4xl font-thin mb-8">{{ 'about.title' | translate }}</h2>
+      @for (paragraph of 'about.description' | translate; track $index) {
+        <p class="text-lg max-w-2xl mb-6">{{ paragraph }}</p>
+      }
+      <a class="rounded-3xl bg-sage-40 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block">You can find us here <img class="inline-block fill-white" src="assets/images/icons/location.svg"/></a>
     </div>
   </section>
 </main>

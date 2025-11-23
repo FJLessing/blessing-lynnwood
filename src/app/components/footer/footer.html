@@ -36,6 +36,25 @@
         <a href="#terms" class="text-sm hover:text-sage-30 transition-colors underline">Terms of Service</a>
         <a href="#cookies" class="text-sm hover:text-sage-30 transition-colors underline">Cookies Settings</a>
       </div>
+
+      <!-- Language Switcher -->
+      <div class="self-end flex flex-row gap-2">
+        <button
+          (click)="switchLanguage('en')"
+          [class.text-sage-50]="currentLanguage === 'en'"
+          [class.text-sage-80]="currentLanguage !== 'en'"
+          class="px-3 py-2 rounded transition-colors hover:text-sage-30">
+          EN
+        </button>
+        <span class="text-sage-80">/</span>
+        <button
+          (click)="switchLanguage('af')"
+          [class.text-sage-50]="currentLanguage === 'af'"
+          [class.text-sage-80]="currentLanguage !== 'af'"
+          class="px-3 py-2 rounded transition-colors hover:text-sage-30">
+          AF
+        </button>
+      </div>
     </div>
   </div>
 </footer>

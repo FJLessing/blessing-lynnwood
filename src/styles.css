@@ -21,6 +21,7 @@
   --color-sage-30: #d9e2ab;
   --color-sage-20: #f6ffc9;
   --color-sage: #899064;
+  --color-sage-transparent: rgba(54, 64, 37, 0.50);
 
   /* Colors - Lime Green */
   --color-lime-60: #64734a;

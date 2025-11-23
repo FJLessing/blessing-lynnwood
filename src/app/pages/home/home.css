@@ -1,3 +1,4 @@
+/* Decoration to create a line above an element */
 .decoration-line-up {
   --line-length: 70px;
 
@@ -15,4 +16,17 @@
   width: 2px;
   height: var(--line-length);
   border-left: 2px solid;
+}
+
+.decoration-line-up::hover:not(::before) {
+  background-color: var(--sage-40);
+  border-color: var(--sage-40);
+}
+
+.shadow-elevation {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+.shadow-elevation-outer {
+  box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px 0 rgba(0, 0, 0, 0.30);
 }

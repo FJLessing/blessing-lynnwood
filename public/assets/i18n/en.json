@@ -13,7 +13,11 @@
   },
   "about": {
     "title": "About us",
-    "description": "Tucked away in the quiet, tree-lined streets of Lynnwood Gardens, Blessing@Lynnwood is the perfect spot to unwind after a busy day in Pretoria. Whether you're here for a school event, a night at the theatre, or an important business trip, you'll find everything you need for a comfortable stay. Enjoy your own space with self-catering facilities, great Wi-Fi, and secure parking. It's easy, relaxed, and just feels like home.",
+    "description": [
+      "Tucked away in the quiet, tree-lined streets of Lynnwood Gardens, Blessing@Lynnwood is the perfect spot to unwind after a busy day in Pretoria.",
+      "Whether you're here for a school event, a night at the theatre, or an important business trip, you'll find everything you need for a comfortable stay.",
+      "Enjoy your own space with self-catering facilities, great Wi-Fi, and secure parking. It's easy, relaxed, and just feels like home."
+    ],
     "findUs": "You can find us here"
   },
   "gallery": {

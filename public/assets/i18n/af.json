@@ -13,7 +13,11 @@
   },
   "about": {
     "title": "Oor ons",
-    "description": "Weggesteek in die stil, boombedekte strate van Lynnwood Gardens, is Blessing@Lynnwood die perfekte plek om te ontspan na 'n besige dag in Pretoria. Of jy hier is vir 'n skoolbyeenkoms, 'n aand by die teater, of 'n belangrike sakereis, sal jy alles vind wat jy nodig het vir 'n gemaklike verblyf. Geniet jou eie ruimte met selfsorg-geriewe, uitstekende Wi-Fi, en veilige parkering. Dit is maklik, ontspanne, en voel net soos tuis.",
+    "description": [
+      "Weggesteek in die stil, boombedekte strate van Lynnwood Gardens, is Blessing@Lynnwood die perfekte plek om te ontspan na 'n besige dag in Pretoria.",
+      "Of jy hier is vir 'n skoolbyeenkoms, 'n aand by die teater, of 'n belangrike sakereis, sal jy alles vind wat jy nodig het vir 'n gemaklike verblyf.",
+      "Geniet jou eie ruimte met selfsorg-geriewe, uitstekende Wi-Fi, en veilige parkering. Dit is maklik, ontspanne, en voel net soos tuis."
+    ],
     "findUs": "Jy kan ons hier vind"
   },
   "gallery": {

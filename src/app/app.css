@@ -1,5 +1,6 @@
 /* App component styles */
 :host {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -7,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
-app-header {
-  flex-shrink: 0;
+:host > app-header {
+  margin-top: 0;
+}
+
+:host > app-footer {
+  margin-top: auto;
 }
