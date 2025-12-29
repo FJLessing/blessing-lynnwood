@@ -1,0 +1,46 @@
+ <div class="w-full overflow-hidden">
+
+      <!-- Carousel Track -->
+      <div class="flex flex-col items-end gap-6 w-full max-w-7xl mx-auto">
+
+        <!-- Items Container -->
+        <div
+          class="flex items-center gap-6 w-full overflow-x-auto no-scrollbar pb-4"
+          (mouseenter)="pause()"
+          (mouseleave)="resume()"
+          (focusin)="pause()"
+          (focusout)="resume()"
+        >
+          @for (slide of slides(); track $index) {
+            <div
+              class="relative transition-all duration-200 ease-in-out shrink-0 rounded-lg overflow-hidden cursor-pointer"
+              [class.w-[550px]]="$index === currentSlide()"
+              [class.w-[220px]]="$index !== currentSlide()"
+              [class.h-[350px]]="true"
+              [class.opacity-100]="$index === currentSlide()"
+              [class.opacity-60]="$index !== currentSlide()"
+              (click)="setCurrent($index)"
+            >
+              <img
+                [ngSrc]="slide.src"
+                fill
+                class="object-cover transition-transform duration-700 hover:scale-105"
+                [alt]="slide.alt"
+              >
+              <div
+                class="absolute inset-0 bg-black/20 transition-opacity duration-300"
+                [class.opacity-0]="$index === currentSlide()"
+                [class.opacity-100]="$index !== currentSlide()"
+              ></div>
+            </div>
+          }
+        </div>
+
+        <!-- Navigation Control -->
+        <button
+          (click)="next()"
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-sage-50 shadow-lg hover:bg-sage-40 transition-colors active:scale-95"
+          aria-label="Next image"
+        >
+          <img ngSrc="assets/images/chevron-right.svg" width="24" height="24" alt="">
+        </button>

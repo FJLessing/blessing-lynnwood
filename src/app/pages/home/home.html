@@ -1,4 +1,4 @@
-<main class="w-full min-h-full">
+<main class="w-full min-h-full bg-neutral-dark">
   <!-- Hero Section -->
   <section class="hero flex items-center justify-center w-full mx-auto bg-neutral-dark text-white">
     <img
@@ -35,5 +35,17 @@
       }
       <a class="rounded-3xl bg-sage-40 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block">You can find us here <img class="inline-block fill-white" src="assets/images/icons/location.svg"/></a>
     </div>
+  </section>
+
+  <!--- Gallery Section -->
+  <section class="w-full py-32 px-4 md:px-20 flex flex-col gap-10 overflow-hidden bg-blessing-gradient">
+       <!-- Header -->
+       <div class="flex items-end gap-3 max-w-7xl mx-auto w-full">
+         <h3 class="text-heading-3 text-white flex-1">Your own</h3>
+         <div class="border-b-2 border-[#CFBB9A33] h-2 basis-2/3 grow shrink-0"></div>
+         <h2 class="text-heading-2-accent text-white flex-1">space</h2>
+       </div>
+       <app-gallery-carousel [slides]="carouselImages"></app-gallery-carousel>
+
   </section>
 </main>

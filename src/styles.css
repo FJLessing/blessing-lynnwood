@@ -216,3 +216,7 @@
     box-sizing: border-box;
   }
 }
+
+.bg-blessing-gradient {
+  background: linear-gradient(1deg, #222421 0.94%, #111 191.44%);
+}
