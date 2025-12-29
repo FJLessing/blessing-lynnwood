@@ -5,7 +5,8 @@
 
         <!-- Items Container -->
         <div
-          class="flex items-center gap-6 w-full overflow-x-auto no-scrollbar pb-4"
+          #track
+          class="flex items-center gap-6 w-full overflow-x-auto no-scrollbar pb-4 scroll-smooth"
           (mouseenter)="pause()"
           (mouseleave)="resume()"
           (focusin)="pause()"
@@ -13,22 +14,27 @@
         >
           @for (slide of slides(); track $index) {
             <div
-              class="relative transition-all duration-200 ease-in-out shrink-0 rounded-lg overflow-hidden cursor-pointer"
-              [class.w-[550px]]="$index === currentSlide()"
-              [class.w-[220px]]="$index !== currentSlide()"
-              [class.h-[350px]]="true"
+              #slideEl
+              tabindex="0"
+              class="relative shrink-0 overflow-hidden rounded-lg cursor-pointer outline-none transition-[opacity,transform] duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-sage-40"
               [class.opacity-100]="$index === currentSlide()"
               [class.opacity-60]="$index !== currentSlide()"
+              [class.scale-[1.02]]="$index === currentSlide()"
+              [class.scale-100]="$index !== currentSlide()"
+              (focus)="setCurrent($index)"
               (click)="setCurrent($index)"
             >
               <img
                 [ngSrc]="slide.src"
-                fill
-                class="object-cover transition-transform duration-700 hover:scale-105"
+                [width]="slide.width"
+                [height]="slide.height"
+                class="carousel-image block h-auto w-auto max-h-[70vh] max-w-[85vw] object-contain transition-transform duration-300 ease-out"
+                [class.scale-[1.02]]="$index === currentSlide()"
+                [class.scale-100]="$index !== currentSlide()"
                 [alt]="slide.alt"
               >
               <div
-                class="absolute inset-0 bg-black/20 transition-opacity duration-300"
+                class="pointer-events-none absolute inset-0 bg-black/20 transition-opacity duration-200 ease-in-out"
                 [class.opacity-0]="$index === currentSlide()"
                 [class.opacity-100]="$index !== currentSlide()"
               ></div>

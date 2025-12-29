@@ -1,5 +1,18 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, DestroyRef, effect, inject, input, output, signal, untracked } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  effect,
+  ElementRef,
+  inject,
+  input,
+  output,
+  QueryList,
+  signal,
+  untracked,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { interval, Subscription } from 'rxjs';
 
@@ -7,6 +20,25 @@ export interface CarouselSlide {
   src: string;
   alt: string;
   title?: string;
+  width: number;
+  height: number;
+}
+
+const DEFAULT_DURATION = 1500;
+
+// Scroll alignment tuning.
+const MOBILE_LEFT_OFFSET_REM = 1;
+const DESKTOP_LEFT_OFFSET_REM = 4;
+
+
+function remToPx(rem: number): number {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize || '16');
+}
+
+function leftOffsetPxForViewport(): number {
+  // Based of tailwind sm
+  const isDesktopLike = window.matchMedia('(min-width: 640px)').matches;
+  return remToPx(isDesktopLike ? DESKTOP_LEFT_OFFSET_REM : MOBILE_LEFT_OFFSET_REM);
 }
 
 @Component({
@@ -18,9 +50,14 @@ export interface CarouselSlide {
 export class GalleryCarousel {
   private readonly destroyRef = inject(DestroyRef);
 
+  @ViewChild('track', { static: true })
+  private readonly track!: ElementRef<HTMLDivElement>;
+
+  @ViewChildren('slideEl')
+  private readonly slideEls!: QueryList<ElementRef<HTMLElement>>;
 
   readonly slides = input.required<CarouselSlide[]>();
-  readonly slideInterval = input<number>(500);
+  readonly slideInterval = input<number>(DEFAULT_DURATION);
   readonly autoplay = input<boolean>(true);
 
   readonly currentIndexChange = output<number>();
@@ -31,19 +68,38 @@ export class GalleryCarousel {
   private autoplaySub: Subscription | null = null;
 
   constructor() {
-    // Clamp Slides effect.
+    // Clamp Slides effect
     effect(() => {
-      const slides = this.slides();
       const current = this.currentSlide();
-
       const clamped = this.clampSlides(current);
+
       if (clamped !== current) {
         this.currentSlide.set(clamped);
         this.currentIndexChange.emit(clamped);
       }
-    })
+    });
 
-    // Autoplay
+    // Keep the active slide left.
+    // With variable-size slides (natural image sizing), we should not rely on a post-width-transition
+    // realignment delay; instead, scroll once after the DOM/query list is ready.
+    effect(() => {
+      const index = this.currentSlide();
+
+      const length = this.slides().length;
+      if (length === 0) return;
+
+      queueMicrotask(() => {
+        const trackEl = this.track?.nativeElement;
+        const el = this.slideEls?.get(index)?.nativeElement;
+
+        if (!trackEl || !el) return;
+
+        const offsetPx = leftOffsetPxForViewport();
+        const left = Math.max(0, el.offsetLeft - offsetPx);
+        trackEl.scrollTo({ left, behavior: 'smooth' });
+      });
+    });
+
     effect((onCleanup) => {
       const enabled = this.autoplay();
       const ms = this.slideInterval();
@@ -55,28 +111,29 @@ export class GalleryCarousel {
       if (!enabled || paused || length <= 1) return;
 
       // assert safe timer numbers
-      const safeMs = Number.isFinite(ms) ? Math.max(0, ms) : 500;
+      const safeMs = Number.isFinite(ms) ? Math.max(1, ms) : DEFAULT_DURATION;
 
       this.autoplaySub = interval(safeMs).subscribe(() => {
         // used untracked because `next()` was creating effect dependencies
         untracked(() => this.next());
-      })
+      });
 
-      onCleanup(() => this.stopAutoplay);
-    })
+      onCleanup(() => this.stopAutoplay());
+    });
 
     // finally
     this.destroyRef.onDestroy(() => this.stopAutoplay());
   }
 
-  stopAutoplay() {
+  private stopAutoplay() {
     this.autoplaySub?.unsubscribe();
     this.autoplaySub = null;
   }
 
   setCurrent(index: number) {
-    this.currentSlide.set(this.clampSlides(index));
-    this.currentIndexChange.emit(index);
+    const clamped = this.clampSlides(index);
+    this.currentSlide.set(clamped);
+    this.currentIndexChange.emit(clamped);
   }
 
   clampSlides(index: number): number {
@@ -97,9 +154,8 @@ export class GalleryCarousel {
     const slides = this.slides();
     if (slides.length === 0) return;
 
-    this.currentSlide.set((this.currentSlide() + 1) % slides.length);
+    const nextIndex = (this.currentSlide() + 1) % slides.length;
+    this.currentSlide.set(nextIndex);
+    this.currentIndexChange.emit(nextIndex);
   }
-}
-function rxInterval(safeMs: number): Subscription | null {
-  throw new Error('Function not implemented.');
 }
