@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { GalleryCarousel, CarouselSlide } from '../../components/gallery-carousel/gallery-carousel';
 import { Amenity, AmenityItem } from '../../components/amenity/amenity';
 import { Availability } from '../../components/availability/availability';
-import { Reviews } from '../../components/reviews/reviews';
-import { Nearby } from '../../components/nearby/nearby';
+import { register } from 'swiper/element/bundle';
+
+register();
+
+export interface Review {
+  rating: number;
+  title: string;
+  body: string;
+  author: string;
+  date: string;
+}
+
+export interface NearbyPlace {
+  nameKey: string;
+  image: string;
+  bgColor?: string;
+}
 
 @Component({
   selector: 'app-home',
-  imports: [TranslateModule, GalleryCarousel, Amenity, Availability, Reviews, Nearby],
+  imports: [TranslateModule, GalleryCarousel, Amenity, Availability],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Home {
   carouselImages: CarouselSlide[] = [
@@ -201,5 +217,70 @@ export class Home {
       title: 'amenities.parking.title',
       description: 'amenities.parking.description',
     },
+  ];
+
+  reviews: Review[] = [
+    {
+      rating: 5,
+      title: 'Exceptional',
+      body: 'This spacious establishment that offers a seperate lounge, seperate toilet and a full bathroom, is in a safe and good area, close to highways, shops and restaurants...',
+      author: 'Laans',
+      date: 'March 2025',
+    },
+    {
+      rating: 5,
+      title: 'Could not have asked for more',
+      body: 'An exceptionally spacious and well-fitted-out apartment in an upmarket and secure residential area. I had a lovely stay with very hospitable hosts. Everything and more than I needed. Could not have asked for better!',
+      author: 'Deon',
+      date: 'March 2025',
+    },
+    {
+      rating: 5,
+      title: 'Superb',
+      body: 'Baie lekker verblyf! Skoon, veilig en gerieflik.',
+      author: 'Gert',
+      date: 'August 2024',
+    },
+  ];
+
+  nearbyPlaces: NearbyPlace[] = [
+    { nameKey: 'nearby.locations.atterbury', image: 'assets/images/card/atterbury.webp' },
+    {
+      nameKey: 'nearby.locations.lynnwoodBridge',
+      image: 'assets/images/card/lynnwood-bridge.webp',
+    },
+    { nameKey: 'nearby.locations.botanicalGardens', image: 'assets/images/card/pnbg.webp' },
+    { nameKey: 'nearby.locations.csir', image: 'assets/images/card/csir.webp' },
+    {
+      nameKey: 'nearby.locations.laerskoolLynnwood',
+      image: 'assets/images/card/laerskool-lynnwood.webp',
+    },
+    { nameKey: 'nearby.locations.menloPark', image: 'assets/images/card/menlopark.webp' },
+    {
+      nameKey: 'nearby.locations.unionBuildings',
+      image: 'assets/images/card/union-buildings.webp',
+    },
+    {
+      nameKey: 'nearby.locations.brooklynMall',
+      image: 'assets/images/card/brooklyn.webp',
+      bgColor: 'bg-black',
+    },
+    { nameKey: 'nearby.locations.menlynMall', image: 'assets/images/card/menlyn.webp' },
+    {
+      nameKey: 'nearby.locations.voortrekkerMonument',
+      image: 'assets/images/card/voortrekker-monument.webp',
+      bgColor: 'bg-[#25404d]',
+    },
+    { nameKey: 'nearby.locations.timesSquare', image: 'assets/images/card/time-square.webp' },
+    {
+      nameKey: 'nearby.locations.universityOfPretoria',
+      image: 'assets/images/card/university-of-pretoria.webp',
+    },
+    { nameKey: 'nearby.locations.loftusPark', image: 'assets/images/card/loftus-park.webp' },
+    {
+      nameKey: 'nearby.locations.glenfairBoulevard',
+      image: 'assets/images/card/glenfair-boulevard.webp',
+    },
+    { nameKey: 'nearby.locations.pretoriaCountryClub', image: 'assets/images/card/pcc.webp' },
   ];
 }

@@ -28,5 +28,24 @@
 }
 
 .shadow-elevation-outer {
-  box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px 0 rgba(0, 0, 0, 0.30);
+  box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper Pagination Styling */
+swiper-container::part(container) {
+  padding-bottom: 3.5rem;
+}
+
+swiper-container::part(pagination) {
+  bottom: 1rem;
+}
+
+swiper-container::part(bullet) {
+  background-color: #899064;
+  opacity: 0.4;
+}
+
+swiper-container::part(bullet-active) {
+  background-color: #cfbb9a;
+  opacity: 1;
 }

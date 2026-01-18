@@ -66,12 +66,74 @@
   </section>
 
   <!-- Reviews Section -->
-  <section class="w-full h-24 bg-neutral-dark">
-    <app-reviews></app-reviews>
+  <section class="w-full bg-neutral-dark px-6 md:px-20 py-20">
+    <div class="flex flex-col items-center gap-10 w-full">
+      <h2 class="text-heading-3 text-white text-center w-full mb-4">
+        {{ 'reviews.title' | translate }}
+      </h2>
+
+      <swiper-container class="w-full" slides-per-view="1" space-between="24" centered-slides="true" pagination="true"
+        [breakpoints]="{
+          '768': { slidesPerView: 2, centeredSlides: false },
+          '1024': { slidesPerView: 3, centeredSlides: false }
+        }">
+        @for (review of reviews; track review.author) {
+        <swiper-slide>
+          <div class="bg-white rounded-lg p-6 flex flex-col gap-6 min-w-60 h-full">
+            <!-- Star Rating -->
+            <div class="flex gap-1">
+              @for (star of [1,2,3,4,5]; track star) {
+              <svg class="w-5 h-5" [class.text-tan-60]="star <= review.rating"
+                [class.text-gray-300]="star > review.rating" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.3-3.957z" />
+              </svg>
+              }
+            </div>
+
+            <!-- Review Body -->
+            <div class="flex flex-col gap-1">
+              <h3 class="text-2xl font-semibold text-primary-60 tracking-tight">{{ review.title }}</h3>
+              <p class="text-base text-primary-60 leading-relaxed">{{ review.body }}</p>
+            </div>
+
+            <!-- Author -->
+            <div class="flex flex-col gap-0.5 mt-auto">
+              <span class="font-semibold text-sage-60">{{ review.author }}</span>
+              <span class="text-sage-60">{{ review.date }}</span>
+            </div>
+          </div>
+        </swiper-slide>
+        }
+      </swiper-container>
+    </div>
   </section>
 
   <!-- Nearby Attractions Section -->
-  <section class="w-full h-24 bg-neutral-dark">
-    <app-nearby></app-nearby>
+  <section class="w-full bg-white px-6 md:px-20 pt-10 pb-20">
+    <div class="flex flex-col items-center gap-6 w-full">
+      <h2 class="text-heading-2 text-primary-60 text-center w-full mb-4">
+        {{ 'nearby.title' | translate }}
+      </h2>
+
+      <swiper-container class="w-full" slides-per-view="1" space-between="24" pagination="true" autoplay [breakpoints]="{
+          '480': { slidesPerView: 2 },
+          '768': { slidesPerView: 3 },
+          '1024': { slidesPerView: 4 }
+        }">
+        @for (place of nearbyPlaces; track place.nameKey) {
+        <swiper-slide>
+          <div class="rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col">
+            <div class="h-[180px] flex items-center justify-center" [class]="place.bgColor ?? 'bg-white'">
+              <img [src]="place.image" [alt]="place.nameKey | translate" class="min-h-full min-w-full object-cover" />
+            </div>
+            <div class="bg-tan-60 px-2.5 py-4 text-center">
+              <span class="text-white text-xs lg:text-md">{{ place.nameKey | translate }}</span>
+            </div>
+          </div>
+        </swiper-slide>
+        }
+      </swiper-container>
+    </div>
   </section>
 </main>
