@@ -1,52 +1,25 @@
- <div class="w-full overflow-hidden">
+<div class="w-full flex flex-col items-end gap-6">
+  <!-- Swiper Container -->
+  <swiper-container #swiperEl init="false" class="w-full" (mouseenter)="pause()" (mouseleave)="resume()">
+    @for (slide of slides(); track $index) {
+    <swiper-slide class="w-auto!">
+      <div class="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ease-out"
+        [class.opacity-100]="$index === currentSlide()" [class.opacity-60]="$index !== currentSlide()"
+        [class.scale-[1.02]]="$index === currentSlide()" [class.scale-100]="$index !== currentSlide()">
+        <img [ngSrc]="slide.src" [width]="slide.width" [height]="slide.height"
+          class="block h-[50vh] sm:h-[60vh] md:h-[70vh] w-auto object-contain" [alt]="slide.alt" priority>
+        <!-- Overlay for inactive slides -->
+        <div class="pointer-events-none absolute inset-0 bg-black/20 transition-opacity duration-300"
+          [class.opacity-0]="$index === currentSlide()" [class.opacity-100]="$index !== currentSlide()"></div>
+      </div>
+    </swiper-slide>
+    }
+  </swiper-container>
 
-      <!-- Carousel Track -->
-      <div class="flex flex-col items-end gap-6 w-full max-w-7xl mx-auto">
-
-        <!-- Items Container -->
-        <div
-          #track
-          class="flex items-center gap-6 w-full overflow-x-auto no-scrollbar pb-4 scroll-smooth"
-          (mouseenter)="pause()"
-          (mouseleave)="resume()"
-          (focusin)="pause()"
-          (focusout)="resume()"
-        >
-          @for (slide of slides(); track $index) {
-            <div
-              #slideEl
-              tabindex="0"
-              class="relative shrink-0 overflow-hidden rounded-lg cursor-pointer outline-none transition-[opacity,transform] duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-sage-40"
-              [class.opacity-100]="$index === currentSlide()"
-              [class.opacity-60]="$index !== currentSlide()"
-              [class.scale-[1.02]]="$index === currentSlide()"
-              [class.scale-100]="$index !== currentSlide()"
-              (focus)="setCurrent($index)"
-              (click)="setCurrent($index)"
-            >
-              <img
-                [ngSrc]="slide.src"
-                [width]="slide.width"
-                [height]="slide.height"
-                class="carousel-image block h-auto w-auto max-h-[70vh] max-w-[85vw] object-contain transition-transform duration-300 ease-out"
-                [class.scale-[1.02]]="$index === currentSlide()"
-                [class.scale-100]="$index !== currentSlide()"
-                [alt]="slide.alt"
-              >
-              <div
-                class="pointer-events-none absolute inset-0 bg-black/20 transition-opacity duration-200 ease-in-out"
-                [class.opacity-0]="$index === currentSlide()"
-                [class.opacity-100]="$index !== currentSlide()"
-              ></div>
-            </div>
-          }
-        </div>
-
-        <!-- Navigation Control -->
-        <button
-          (click)="next()"
-          class="flex items-center justify-center w-12 h-12 rounded-full bg-sage-50 shadow-lg hover:bg-sage-40 transition-colors active:scale-95"
-          aria-label="Next image"
-        >
-          <img ngSrc="assets/images/chevron-right.svg" width="24" height="24" alt="">
-        </button>
+  <!-- Navigation Button -->
+  <button (click)="next()"
+    class="flex items-center justify-center w-12 h-12 mr-4 sm:mr-16 rounded-full bg-sage-50 shadow-lg hover:bg-sage-40 transition-colors active:scale-95"
+    aria-label="Next image">
+    <img ngSrc="assets/images/chevron-right.svg" width="24" height="24" alt="">
+  </button>
+</div>
