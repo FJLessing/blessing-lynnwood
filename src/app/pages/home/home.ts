@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { GalleryCarousel, CarouselSlide } from '../../components/gallery-carousel/gallery-carousel';
 import { Amenity, AmenityItem } from '../../components/amenity/amenity';
+import { Availability } from '../../components/availability/availability';
+import { Reviews } from '../../components/reviews/reviews';
+import { Nearby } from '../../components/nearby/nearby';
 
 @Component({
   selector: 'app-home',
-  imports: [TranslateModule, GalleryCarousel, Amenity],
+  imports: [TranslateModule, GalleryCarousel, Amenity, Availability, Reviews, Nearby],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
