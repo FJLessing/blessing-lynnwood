@@ -23,14 +23,6 @@
   border-color: var(--sage-40);
 }
 
-.shadow-elevation {
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(255, 255, 255, 0.05) inset;
-}
-
-.shadow-elevation-outer {
-  box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px 0 rgba(0, 0, 0, 0.3);
-}
-
 /* Swiper Pagination Styling */
 swiper-container::part(container) {
   padding-bottom: 3.5rem;

@@ -219,11 +219,12 @@ export class Home {
     },
   ];
 
+  // Don't translate review content
   reviews: Review[] = [
     {
       rating: 5,
       title: 'Exceptional',
-      body: 'This spacious establishment that offers a seperate lounge, seperate toilet and a full bathroom, is in a safe and good area, close to highways, shops and restaurants...',
+      body: 'reviews.items.exceptional',
       author: 'Laans',
       date: 'March 2025',
     },

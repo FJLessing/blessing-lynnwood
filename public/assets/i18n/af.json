@@ -94,6 +94,57 @@
       }
     ]
   },
+  "yourStay": {
+    "title": "Oor jou verblyf",
+    "location": {
+      "title": "Jy kan ons hier vind:",
+      "button": "Vind ons op Google Maps"
+    },
+    "info": {
+      "title": "Wat om te weet oor jou verblyf:",
+      "checkIn": {
+        "title": "Inklok:",
+        "text": "15:00 tot 20:00"
+      },
+      "checkOut": {
+        "title": "Uitklok:",
+        "text": "11:00"
+      },
+      "cancellation": {
+        "title": "Kansellasie en vooruitbetaling",
+        "text": "Kansellasie- en vooruitbetalingsbeleide wissel volgens akkommodasie tipe. Voer asseblief die datums van jou verblyf in en kyk na die voorwaardes van jou vereiste opsie."
+      },
+      "childPolicies": {
+        "title": "Kinderbeleide",
+        "text": "Kinders ouer as 12 jaar is welkom.<br>Kinders 17 jaar en ouer sal as volwassenes by hierdie eiendom gehef word.<br><br>Om korrekte pryse en besettingsinligting te sien, voeg asseblief die aantal kinders in jou groep en hul ouderdomme by jou soektog."
+      },
+      "cotPolicies": {
+        "title": "Kot- en ekstra bedbeleide",
+        "text": "12+ jaar: ekstra bed op versoek teen 'n addisionele tarief van R650 per persoon / per nag.<br><br>Pryse vir ekstra beddens is nie by die totale prys ingesluit nie, en sal apart betaal moet word tydens jou verblyf.<br>Die aantal ekstra beddens wat toegelaat word, hang af van die opsie wat jy kies. Kyk asseblief na jou gekose opsie vir meer inligting.<br><br>Daar is geen kotte beskikbaar by hierdie eiendom nie.<br>Alle ekstra beddens is onderhewig aan beskikbaarheid."
+      },
+      "ageRestriction": {
+        "title": "Ouderdomsbeperkings",
+        "text": "Die minimum ouderdom vir inklok is 18"
+      },
+      "smoking": {
+        "title": "Rook word nie toegelaat nie"
+      },
+      "parties": {
+        "title": "Partytjies/geleenthede word nie toegelaat nie"
+      },
+      "quietHours": {
+        "title": "Stil ure",
+        "text": "Gaste moet stil wees tussen 23:00 en 05:00."
+      },
+      "pets": {
+        "title": "Troeteldiere word nie toegelaat nie"
+      }
+    },
+    "contact": {
+      "title": "Vir enige navrae",
+      "button": "Kontak Ons"
+    }
+  },
   "nearby": {
     "title": "Ons is naby geleë aan...",
     "locations": {

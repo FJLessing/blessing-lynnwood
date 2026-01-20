@@ -18,16 +18,35 @@
     <div class="mb-4 flex items-center justify-between">
       <button
         class="flex h-8 w-8 items-center justify-center text-xl text-primary-60 cursor-pointer hover:opacity-80 transition-opacity"
-        type="button" (click)="changeMonth(-1)">
-        &lt;
+        type="button"
+        (click)="changeMonth(-1)"
+      >
+        <svg
+          class="rotate-180"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="#1D1B20" />
+        </svg>
       </button>
       <h3 class="text-body-1 font-medium text-primary-60">
         {{ currentDate() | date: 'MMMM yyyy' }}
       </h3>
       <button
         class="flex h-8 w-8 items-center justify-center text-xl text-primary-60 cursor-pointer hover:opacity-80 transition-opacity"
-        type="button" (click)="changeMonth(1)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        type="button"
+        (click)="changeMonth(1)"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="#1D1B20" />
         </svg>
       </button>
@@ -41,14 +60,20 @@
 
     <div class="my-3 grid grid-cols-7 gap-2">
       @for (day of daysInMonth(); track day.dayNum + '-' + $index) {
-      <div class="flex h-12 w-12 items-center justify-center rounded text-button transition-opacity"
+      <div
+        class="flex h-12 w-12 items-center justify-center rounded text-button transition-opacity"
         [class.cursor-pointer]="!day.isPadding && !day.isBooked"
-        [class.cursor-not-allowed]="day.isPadding || day.isBooked" [class.opacity-50]="day.isPadding"
-        [class.hover:bg-sage-40]="!day.isPadding && !day.isBooked" [class.bg-primary-50]="day.isBooked"
+        [class.cursor-not-allowed]="day.isPadding || day.isBooked"
+        [class.opacity-50]="day.isPadding"
+        [class.hover:bg-sage-40]="!day.isPadding && !day.isBooked"
+        [class.bg-primary-50]="day.isBooked"
         [class.bg-sage-50]="!day.isBooked && !day.isPadding"
         [class.bg-tan-60]="isSelectedStart(day) || isSelectedEnd(day) || isInRange(day)"
-        [class.bg-white]="day.isPadding" [class.text-white]="!day.isPadding" [class.text-transparent]="day.isPadding"
-        (click)="onDayClick(day)">
+        [class.bg-white]="day.isPadding"
+        [class.text-white]="!day.isPadding"
+        [class.text-transparent]="day.isPadding"
+        (click)="onDayClick(day)"
+      >
         @if (!day.isPadding) {
         <span>{{ day.dayNum }}</span>
         }
@@ -56,8 +81,13 @@
       }
     </div>
 
-    <a class="mt-6 inline-block rounded-full bg-sage-60 px-6 py-2.5 text-button text-white" [href]="bookingUrl()"
-      target="_blank" rel="noopener noreferrer" referrerpolicy="strict-origin-when-cross-origin">
+    <a
+      class="mt-6 inline-block rounded-full bg-sage-60 px-6 py-2.5 text-button text-white"
+      [href]="bookingUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+      referrerpolicy="strict-origin-when-cross-origin"
+    >
       Book your stay now
     </a>
   </div>

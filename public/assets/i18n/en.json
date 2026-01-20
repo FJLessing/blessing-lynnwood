@@ -94,6 +94,57 @@
       }
     ]
   },
+  "yourStay": {
+    "title": "About your stay",
+    "location": {
+      "title": "You can find us here:",
+      "button": "Find us on Google Maps"
+    },
+    "info": {
+      "title": "What to know about your stay:",
+      "checkIn": {
+        "title": "Check in:",
+        "text": "15:00 to 20:00"
+      },
+      "checkOut": {
+        "title": "Check out:",
+        "text": "11:00"
+      },
+      "cancellation": {
+        "title": "Cancellation and prepayment",
+        "text": "Cancellation and prepayment policies vary according to accommodation type. Please enter the dates of your stay and check the conditions of your required option."
+      },
+      "childPolicies": {
+        "title": "Child Policies",
+        "text": "Children older than 12 years are welcome.<br>Children 17 years and above will be charged as adults at this property.<br><br>To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+      },
+      "cotPolicies": {
+        "title": "Cot and extra bed policies",
+        "text": "12+ years: extra bed upon request at an additional rate of R650 per person / per night.<br><br>Prices for extra beds are not included in the total price, and will have to be paid for separately during your stay.<br>The number of extra beds allowed is dependent on the option you choose. Please check your selected option for more information.<br><br>There are no cots available at this property.<br>All extra beds are subject to availability."
+      },
+      "ageRestriction": {
+        "title": "Age Restrictions",
+        "text": "The minimum age for check-in is 18"
+      },
+      "smoking": {
+        "title": "Smoking is not allowed"
+      },
+      "parties": {
+        "title": "Parties/events are not allowed"
+      },
+      "quietHours": {
+        "title": "Quiet hours",
+        "text": "Guests must be quiet between 23:00 and 05:00."
+      },
+      "pets": {
+        "title": "Pets are not allowed"
+      }
+    },
+    "contact": {
+      "title": "For any queries",
+      "button": "Contact Us"
+    }
+  },
   "nearby": {
     "title": "We are located close to...",
     "locations": {

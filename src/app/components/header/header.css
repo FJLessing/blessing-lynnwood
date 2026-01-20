@@ -8,7 +8,7 @@
     top: 0;
     z-index: 10;
     background-color: transparent;
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.5) 23.33%, rgba(37, 37, 37, 0) 100%);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.75) 23.33%, rgba(37, 37, 37, 0.27) 100%);
     padding: 1.25rem 2rem;
     transition: background-color 0.3s ease;
   }
