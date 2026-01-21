@@ -44,3 +44,5 @@ Thumbs.db
 
 
 /design
+.env
+public/assets/env.json

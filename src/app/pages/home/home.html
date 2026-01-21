@@ -1,11 +1,8 @@
 <main class="w-full min-h-full bg-neutral-dark">
   <!-- Hero Section -->
   <section class="hero flex items-center justify-center w-full mx-auto bg-neutral-dark text-white">
-    <img
-      src="assets/images/hero-image.webp"
-      alt="Blessing Lynnwood Hero Image"
-      class="basis-1/2 w-1/2 h-auto object-cover"
-    />
+    <img src="assets/images/hero-image.webp" alt="Blessing Lynnwood Hero Image"
+      class="basis-1/2 w-1/2 h-auto object-cover" />
     <div class="basis-1/2 pt-15 px-8 text-right flex flex-col items-start">
       <h1 class="text-5xl font-bold text-white my-8 md:-ml-12 2xl:text-9xl">
         {{ 'hero.title' | translate }}
@@ -13,10 +10,8 @@
       <div class="w-1/2 2xl:text-2xl">
         <p>{{ 'hero.subtitle' | translate }}</p>
       </div>
-      <a
-        href="#booking"
-        class="decoration-line-up block mt-6 rounded-full border-2 border-sage text-sage px-6 py-2.5 text-button font-semibold transition-colors 2xl:text-2xl 2xl:py-4 2xl:px-8 hover:bg-sage-20"
-      >
+      <a href="#booking"
+        class="decoration-line-up block mt-6 rounded-full border-2 border-sage text-sage px-6 py-2.5 text-button font-semibold transition-colors 2xl:text-2xl 2xl:py-4 2xl:px-8 hover:bg-sage-20">
         {{ 'hero.bookNow' | translate }}
       </a>
     </div>
@@ -24,31 +19,23 @@
 
   <!-- About Us Section -->
   <section
-    class="about-us shadow-elevation-outer relative bg-cover bg-center bg-no-repeat text-white min-h-screen flex justify-center items-center overflow-clip"
-  >
-    <img
-      src="assets/images/backdrop-grass.webp"
-      alt="Image of a beautiful grassy hedge."
-      class="absolute inset-0 min-w-full min-h-full object-cover z-1"
-    />
+    class="about-us shadow-elevation-outer relative bg-cover bg-center bg-no-repeat text-white min-h-screen flex justify-center items-center overflow-clip">
+    <img src="assets/images/backdrop-grass.webp" alt="Image of a beautiful grassy hedge."
+      class="absolute inset-0 min-w-full min-h-full object-cover z-1" />
     <div class="bg-black/50 absolute inset-0 w-full h-full object-cover z-1"></div>
     <div class="shadow-elevation bg-sage-transparent rounded-2xl m-auto p-8 text-center z-2">
       <h2 class="text-4xl font-thin mb-8">{{ 'about.title' | translate }}</h2>
       @for (paragraph of 'about.description' | translate; track $index) {
       <p class="text-lg max-w-2xl mb-6">{{ paragraph }}</p>
       }
-      <a
-        class="rounded-3xl bg-sage-40 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block"
-        >You can find us here
-        <img class="inline-block fill-white" src="assets/images/icons/location.svg"
-      /></a>
+      <a class="rounded-3xl bg-sage-40 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block">You can
+        find us here
+        <img class="inline-block fill-white" src="assets/images/icons/location.svg" /></a>
     </div>
   </section>
 
   <!--- Gallery Section -->
-  <section
-    class="w-full py-32 px-4 md:px-20 flex flex-col gap-10 overflow-hidden bg-blessing-gradient"
-  >
+  <section id="gallery" class="w-full py-32 px-4 md:px-20 flex flex-col gap-10 overflow-hidden bg-blessing-gradient">
     <!-- Header -->
     <div class="flex items-end gap-3 max-w-7xl mx-auto w-full">
       <h3 class="text-heading-3 text-white flex-1">Your own</h3>
@@ -62,12 +49,8 @@
   <section class="amenities w-full py-32 px-4 md:px-20">
     <div class="flex justify-evenly flex-wrap gap-5 xl:max-w-7xl mx-auto">
       @for (amenity of amenities; track $index) {
-      <app-amenity
-        class="flex-1 basis-1/2 md:basis-1/3 xl:basis-1/4"
-        [icon]="amenity.icon"
-        [title]="amenity.title"
-        [description]="amenity.description"
-      ></app-amenity>
+      <app-amenity class="flex-1 basis-1/2 md:basis-1/3 xl:basis-1/4" [icon]="amenity.icon" [title]="amenity.title"
+        [description]="amenity.description"></app-amenity>
       }
     </div>
   </section>
@@ -79,11 +62,7 @@
         <app-availability></app-availability>
       </div>
       <div class="overflow-hidden rounded-lg shadow-elevation">
-        <img
-          class="object-contain"
-          src="assets/images/availability.webp"
-          alt="Availability Image"
-        />
+        <img class="object-contain" src="assets/images/availability.webp" alt="Availability Image" />
       </div>
     </div>
   </section>
@@ -95,33 +74,21 @@
         {{ 'reviews.title' | translate }}
       </h2>
 
-      <swiper-container
-        class="w-full xl:max-w-7xl"
-        slides-per-view="1"
-        space-between="24"
-        centered-slides="true"
-        pagination="true"
-        [breakpoints]="{
+      <swiper-container class="w-full xl:max-w-7xl" slides-per-view="1" space-between="24" centered-slides="true"
+        pagination="true" [breakpoints]="{
           '768': { slidesPerView: 2, centeredSlides: false },
           '1024': { slidesPerView: 3, centeredSlides: false }
-        }"
-      >
+        }">
         @for (review of reviews; track review.author) {
         <swiper-slide>
           <div class="bg-white rounded-lg p-6 flex flex-col gap-6 min-w-60 h-full">
             <!-- Star Rating -->
             <div class="flex gap-1">
               @for (star of [1,2,3,4,5]; track star) {
-              <svg
-                class="w-5 h-5"
-                [class.text-tan-60]="star <= review.rating"
-                [class.text-gray-300]="star > review.rating"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
+              <svg class="w-5 h-5" [class.text-tan-60]="star <= review.rating"
+                [class.text-gray-300]="star > review.rating" fill="currentColor" viewBox="0 0 20 20">
                 <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.3-3.957z"
-                />
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.3-3.957z" />
               </svg>
               }
             </div>
@@ -153,34 +120,18 @@
         {{ 'nearby.title' | translate }}
       </h2>
 
-      <swiper-container
-        class="w-full"
-        slides-per-view="1"
-        space-between="24"
-        pagination="true"
-        autoplay
-        [breakpoints]="{
+      <swiper-container class="w-full" slides-per-view="1" space-between="24" pagination="true" autoplay [breakpoints]="{
           '480': { slidesPerView: 2 },
           '768': { slidesPerView: 3 },
           '1024': { slidesPerView: 4 },
           '1440': { slidesPerView: 6},
           '1921': { slidesPerView: 8}
-        }"
-      >
+        }">
         @for (place of nearbyPlaces; track place.nameKey) {
         <swiper-slide>
-          <div
-            class="rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col"
-          >
-            <div
-              class="h-[180px] flex items-center justify-center"
-              [class]="place.bgColor ?? 'bg-white'"
-            >
-              <img
-                [src]="place.image"
-                [alt]="place.nameKey | translate"
-                class="min-h-full min-w-full object-cover"
-              />
+          <div class="rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col">
+            <div class="h-[180px] flex items-center justify-center" [class]="place.bgColor ?? 'bg-white'">
+              <img [src]="place.image" [alt]="place.nameKey | translate" class="min-h-full min-w-full object-cover" />
             </div>
             <div class="bg-tan-60 px-2.5 py-4 text-center">
               <span class="text-white text-xs lg:text-md">{{ place.nameKey | translate }}</span>

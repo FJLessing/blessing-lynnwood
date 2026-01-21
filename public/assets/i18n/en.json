@@ -179,5 +179,28 @@
     "email": "Email",
     "message": "Message",
     "submit": "Send Message"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "tagline": "Please feel free to",
+    "acceptText": "I accept the",
+    "subtitle": "You can easily reach us at any of the following:",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "showPhone": "Show phone",
+    "showEmail": "Show email",
+    "copy": "Copy",
+    "form": {
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your.email@example.com",
+      "phonePlaceholder": "+27 12 345 6789",
+      "messagePlaceholder": "Tell us more about your inquiry..."
+    },
+    "sending": "Sending...",
+    "successTitle": "Thank you!",
+    "successText": "Your message has been sent successfully. We'll get back to you soon.",
+    "errorTitle": "Error:",
+    "copied": "Copied!"
   }
 }

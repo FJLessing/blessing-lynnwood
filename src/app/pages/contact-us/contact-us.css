@@ -1,0 +1,38 @@
+/* Background and left-side styling for Contact page */
+.contact-page-bg {
+  background-color: #fffbf4;
+  background-image: url('/assets/images/contact-tree.svg');
+  background-repeat: no-repeat;
+  background-position: left 16rem bottom;
+  background-size: 25vw;
+}
+
+.contact-side {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02));
+}
+/* Form controls matching Figma styling */
+.contact-form-input,
+.contact-form-textarea {
+  border: 0.0625rem solid var(--color-primary-50);
+  background-color: transparent;
+  color: var(--color-neutral-dark);
+}
+
+.contact-form-textarea {
+  min-height: 11.25rem;
+  resize: vertical;
+}
+
+.contact-submit-btn {
+  width: 13.375rem;
+  background-color: var(--color-sage-50);
+  color: white;
+  padding: 0.625rem 1.5rem;
+}
+
+.contact-terms-checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.0625rem solid var(--color-primary-50);
+  background: white;
+}

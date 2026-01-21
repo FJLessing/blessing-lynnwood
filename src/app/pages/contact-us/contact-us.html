@@ -1,1 +1,166 @@
-<p>contact-us works!</p>
+<div class="min-h-screen contact-page-bg">
+  <div class="mx-auto max-w-6xl px-6 py-16">
+    <div class="rounded-lg p-0 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <!-- Left: Contact details / design from Figma -->
+      <aside class="py-12 bg-cover bg-no-repeat bg-left contact-side flex md:min-h-[520px]">
+        <div class="max-w-md">
+          <p class="text-subheading-2 text-primary-60 mb-2">{{ 'contactPage.tagline' | translate }}</p>
+          <h1 class="text-heading-1 text-primary-60 mb-4 lg:my-8">
+            {{ 'contactPage.title' | translate }}
+          </h1>
+          <p class="text-subheading-1 mt-2 text-primary-60 mb-6">{{ 'contactPage.subtitle' | translate }}</p>
+
+          <dl class="space-y-4">
+
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 text-primary-60 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.63A2 2 0 014.11 2H7a2 2 0 012 1.72c.12 1.05.45 2.07.97 3.02a2 2 0 01-.45 2.11L8.5 10.5a15.05 15.05 0 006 6l1.65-1.65a2 2 0 012.11-.45c.95.52 1.97.85 3.02.97A2 2 0 0122 16.92z"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div>
+                <dt class="text-sage-50 hidden">{{ 'contactPage.phoneLabel' | translate }}</dt>
+                <dd class="text-body-1 text-primary-60 flex items-center gap-3">
+                  @if (!revealedPhone()) {
+                  <button type="button" class="underline" (click)="revealPhone()">{{ 'contactPage.showPhone' | translate
+                    }}</button>
+                  } @else {
+                  <a [href]="getTelHref()" class="underline">{{ getPhone() }}</a>
+                  <button type="button" class="text-sm text-sage-50 ml-2"
+                    (click)="copyToClipboard(getPhone(), 'phone')">{{ 'contactPage.copy' | translate }}</button>
+                  @if (copyTarget() === 'phone') {
+                  <span class="text-sm text-sage-50 ml-3">{{ 'contactPage.copied' | translate }}</span>
+                  }
+                  }
+                </dd>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 text-primary-60 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6.5v11a1 1 0 001 1h16a1 1 0 001-1v-11a1 1 0 00-1-1H4a1 1 0 00-1 1z" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <path d="M3 6.5l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
+              </svg>
+              <div>
+                <dt class="text-sage-50 hidden">{{ 'contactPage.emailLabel' | translate }}</dt>
+                <dd class="text-body-1 text-primary-60 flex items-center gap-3">
+                  @if (!revealedEmail()) {
+                  <button type="button" class="underline" (click)="revealEmail()">{{ 'contactPage.showEmail' | translate
+                    }}</button>
+                  } @else {
+                  <a [href]="getMailtoHref()" class="underline">{{ getEmail() }}</a>
+                  <button type="button" class="text-sm text-sage-50 ml-2"
+                    (click)="copyToClipboard(getEmail(), 'email')">{{ 'contactPage.copy' | translate }}</button>
+                  @if (copyTarget() === 'email') {
+                  <span class="text-sm text-sage-50 ml-3">{{ 'contactPage.copied' | translate }}</span>
+                  }
+                  }
+                </dd>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 text-primary-60 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 12C12.55 12 13.0208 11.8042 13.4125 11.4125C13.8042 11.0208 14 10.55 14 10C14 9.45 13.8042 8.97917 13.4125 8.5875C13.0208 8.19583 12.55 8 12 8C11.45 8 10.9792 8.19583 10.5875 8.5875C10.1958 8.97917 10 9.45 10 10C10 10.55 10.1958 11.0208 10.5875 11.4125C10.9792 11.8042 11.45 12 12 12ZM12 19.35C14.0333 17.4833 15.5417 15.7875 16.525 14.2625C17.5083 12.7375 18 11.3833 18 10.2C18 8.38333 17.4208 6.89583 16.2625 5.7375C15.1042 4.57917 13.6833 4 12 4C10.3167 4 8.89583 4.57917 7.7375 5.7375C6.57917 6.89583 6 8.38333 6 10.2C6 11.3833 6.49167 12.7375 7.475 14.2625C8.45833 15.7875 9.96667 17.4833 12 19.35ZM12 22C9.31667 19.7167 7.3125 17.5958 5.9875 15.6375C4.6625 13.6792 4 11.8667 4 10.2C4 7.7 4.80417 5.70833 6.4125 4.225C8.02083 2.74167 9.88333 2 12 2C14.1167 2 15.9792 2.74167 17.5875 4.225C19.1958 5.70833 20 7.7 20 10.2C20 11.8667 19.3375 13.6792 18.0125 15.6375C16.6875 17.5958 14.6833 19.7167 12 22Z"
+                  fill="currentColor" />
+              </svg>
+              <div>
+                <dt class="text-sage-50 hidden">{{ 'contactPage.addressLabel' | translate }}</dt>
+                <dd class="text-body-1 text-primary-60">358 Elizabeth Grove South, Pretoria 0081</dd>
+              </div>
+            </div>
+
+          </dl>
+        </div>
+      </aside>
+
+      <!-- Right: Form -->
+      <section class="p-10">
+        <form (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Name Field -->
+          <div>
+            <label for="name" class="block text-subheading-2 text-primary-60 mb-2">
+              {{ 'contactForm.name' | translate }} *
+            </label>
+            <input type="text" id="name" name="name" [value]="formData().name"
+              (input)="updateField('name', $any($event.target).value)"
+              class="w-full rounded-lg contact-form-input px-4 py-3 text-body-1 text-primary-60 placeholder:text-sage-40 focus:outline-none"
+              placeholder="{{ 'contactPage.form.namePlaceholder' | translate }}" required />
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block text-subheading-2 text-primary-60 mb-2">
+              {{ 'contactForm.email' | translate }} *
+            </label>
+            <input type="email" id="email" name="email" [value]="formData().email"
+              (input)="updateField('email', $any($event.target).value)"
+              class="w-full rounded-lg contact-form-input px-4 py-3 text-body-1 text-primary-60 placeholder:text-sage-40 focus:outline-none"
+              placeholder="{{ 'contactPage.form.emailPlaceholder' | translate }}" required />
+          </div>
+
+          <!-- Phone Field -->
+          <div>
+            <label for="phone" class="block text-subheading-2 text-primary-60 mb-2">
+              {{ 'contactPage.phoneLabel' | translate }}
+            </label>
+            <input type="tel" id="phone" name="phone" [value]="formData().phone"
+              (input)="updateField('phone', $any($event.target).value)"
+              class="w-full rounded-lg contact-form-input px-4 py-3 text-body-1 text-primary-60 placeholder:text-sage-40 focus:outline-none"
+              placeholder="{{ 'contactPage.form.phonePlaceholder' | translate }}" />
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label for="message" class="block text-subheading-2 text-primary-60 mb-2">
+              {{ 'contactForm.message' | translate }} *
+            </label>
+            <textarea id="message" name="message" rows="6" [value]="formData().message"
+              (input)="updateField('message', $any($event.target).value)"
+              class="w-full rounded-lg contact-form-textarea px-4 py-3 text-body-1 text-primary-60 placeholder:text-sage-40 focus:outline-none"
+              placeholder="{{ 'contactPage.form.messagePlaceholder' | translate }}" required></textarea>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <input id="acceptTerms" #terms type="checkbox" class="contact-terms-checkbox mt-1" required />
+            <label for="acceptTerms" class="text-body-2 text-primary-60">
+              {{ 'contactPage.acceptText' | translate }}
+              <a href="/terms" class="underline ml-1">{{ 'footer.links.terms' | translate }}</a>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4">
+            <button type="submit" [disabled]="isSubmitting() || !terms.checked"
+              class="contact-submit-btn rounded-4xl transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
+              @if (isSubmitting()) {
+              <span>{{ 'contactPage.sending' | translate }}</span>
+              } @else {
+              {{ 'contactForm.submit' | translate }}
+              }
+            </button>
+          </div>
+
+          <!-- Status Messages -->
+          @if (submitStatus() === 'success') {
+          <div class="rounded-lg bg-lime-30 p-4 text-body-1 text-primary-60">
+            <strong>{{ 'contactPage.successTitle' | translate }}</strong> {{ 'contactPage.successText' | translate }}
+          </div>
+          }
+
+          @if (submitStatus() === 'error') {
+          <div class="rounded-lg bg-yellow-green-30 p-4 text-body-1 text-primary-60">
+            <strong>{{ 'contactPage.errorTitle' | translate }}</strong> {{ errorMessage() }}
+          </div>
+          }
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

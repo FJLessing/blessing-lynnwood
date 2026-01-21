@@ -11,9 +11,9 @@
       <div class="flex flex-col items-end gap-10">
         <!-- Navigation Links -->
         <nav class="flex flex-row items-center gap-10">
-          <a href="#your-stay" class="text-body-1 hover:text-sage-30 transition-colors">Your Stay</a>
-          <a href="#gallery" class="text-body-1 hover:text-sage-30 transition-colors">Gallery</a>
-          <a href="#contact" class="text-body-1 hover:text-sage-30 transition-colors">Contact Us</a>
+          <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors">Your Stay</a>
+          <a [routerLink]="['/']" fragment="gallery" class="text-body-1 hover:text-sage-30 transition-colors">Gallery</a>
+          <a [routerLink]="['/contact-us']" class="text-body-1 hover:text-sage-30 transition-colors">Contact Us</a>
         </nav>
 
         <!-- CTA Button -->

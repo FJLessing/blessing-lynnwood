@@ -179,5 +179,28 @@
     "email": "E-pos",
     "message": "Boodskap",
     "submit": "Stuur Boodskap"
+  },
+  "contactPage": {
+    "title": "Kontak Ons",
+    "tagline": "Voel vry om",
+    "acceptText": "Ek aanvaar die",
+    "subtitle": "Gebruik die vorm of die kontakbesonderhede hieronder.",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefoon",
+    "emailLabel": "E-pos",
+    "showPhone": "Wys telefoon",
+    "showEmail": "Wys e-pos",
+    "copy": "Kopieer",
+    "form": {
+      "namePlaceholder": "Jou volle naam",
+      "emailPlaceholder": "jou.e-pos@voorbeeld.com",
+      "phonePlaceholder": "+27 12 345 6789",
+      "messagePlaceholder": "Vertel ons meer oor jou navraag..."
+    },
+    "sending": "Besig om te stuur...",
+    "successTitle": "Dankie!",
+    "successText": "Jou boodskap is suksesvol gestuur. Ons sal binnekort by jou terugkom.",
+    "errorTitle": "Fout:",
+    "copied": "Gekopieer!"
   }
 }
