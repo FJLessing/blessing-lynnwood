@@ -202,5 +202,127 @@
     "successText": "Jou boodskap is suksesvol gestuur. Ons sal binnekort by jou terugkom.",
     "errorTitle": "Fout:",
     "copied": "Gekopieer!"
+  },
+  "privacyPolicy": {
+    "title": "Privaatheidsbeleid",
+    "lastUpdated": "Laas Bygewerk",
+    "lastUpdatedDate": "Desember 2026",
+    "introduction": {
+      "title": "Inleiding",
+      "text": "By Blessing@Lynnwood is ons daartoe verbind om jou privaatheid te beskerm en die sekuriteit van jou persoonlike inligting te verseker. Hierdie Privaatheidsbeleid verduidelik hoe ons jou inligting insamel, gebruik en beskerm wanneer jy ons webwerf besoek of akkommodasie by ons bespreek."
+    },
+    "informationWeCollect": {
+      "title": "Inligting Wat Ons Insamel",
+      "text": "Ons mag die volgende tipes inligting insamel:",
+      "personalInfo": "Persoonlike identifikasie-inligting (naam, adres, ID-nommer)",
+      "contactInfo": "Kontakinligting (telefoonnommer, e-posadres)",
+      "bookingInfo": "Besprekings- en betalingsinligting",
+      "preferences": "Akkommodasievoorkeure en spesiale vereistes"
+    },
+    "howWeUseInfo": {
+      "title": "Hoe Ons Jou Inligting Gebruik",
+      "text": "Ons gebruik jou inligting vir die volgende doeleindes:",
+      "processBookings": "Verwerk en bestuur jou akkommodasiebesprekings",
+      "communicate": "Kommunikeer met jou oor jou verblyf",
+      "improveServices": "Verbeter ons dienste en kliënte-ervaring",
+      "legal": "Voldoen aan wetlike verpligtinge en vereistes"
+    },
+    "dataSharing": {
+      "title": "Inligtingsdeling",
+      "text": "Ons verkoop, ruil of dra nie jou persoonlike inligting aan derde partye oor sonder jou toestemming nie, behalwe soos vereis deur die wet of om die dienste te verskaf wat jy aangevra het."
+    },
+    "contact": {
+      "title": "Kontak Ons",
+      "text": "As jy enige vrae het oor hierdie Privaatheidsbeleid, kontak ons asseblief:",
+      "email": "E-pos"
+    }
+  },
+  "termsOfService": {
+    "title": "Diensbepalings",
+    "lastUpdated": "Laas Bygewerk",
+    "lastUpdatedDate": "Desember 2026",
+    "acceptance": {
+      "title": "Aanvaarding van Bepalings",
+      "text": "Deur akkommodasie by Blessing@Lynnwood te bespreek, stem jy in om hierdie Diensbepalings na te kom en daaraan gebonde te wees. As jy nie met hierdie bepalings saamstem nie, moet jy asseblief nie ons dienste gebruik nie."
+    },
+    "bookingTerms": {
+      "title": "Besprekingsbepaling",
+      "text": "Die volgende bepalings geld vir alle besprekings:",
+      "confirmation": "Alle besprekings is onderhewig aan beskikbaarheid en bevestiging",
+      "payment": "Volledige betaling is nodig om jou bespreking te verseker",
+      "cancellation": "Kansellasiebeleid wissel volgens besprekingstipe en datum",
+      "noShow": "Nie-opdaag besprekings mag lei tot verbeurverklaring van betaling"
+    },
+    "guestResponsibilities": {
+      "title": "Gas Verantwoordelikhede",
+      "text": "As 'n gas is jy verantwoordelik vir:",
+      "respectProperty": "Behandel die eiendom en sy inhoud met respek",
+      "followRules": "Volg alle eiendomsreëls en plaaslike regulasies",
+      "liability": "Enige skade wat gedurende jou verblyf veroorsaak word",
+      "checkInOut": "Nakoming van inklok- en uitkloktye"
+    },
+    "propertyRules": {
+      "title": "Eiendomsreëls",
+      "text": "Die volgende reëls geld vir alle gaste:",
+      "noSmoking": "Rook is nie op die eiendom toegelaat nie",
+      "noPets": "Troeteldiere word nie toegelaat nie tensy spesifiek goedgekeur",
+      "noParties": "Partytjies en geleenthede word nie toegelaat nie",
+      "quietHours": "Stil ure word afgedwing tussen 23:00 en 05:00",
+      "maxOccupancy": "Maksimum besettingsgrense moet gerespekteer word"
+    },
+    "limitation": {
+      "title": "Beperking van Aanspreeklikheid",
+      "text": "Blessing@Lynnwood se aanspreeklikheid is beperk tot die bedrag wat vir jou akkommodasie betaal is. Ons is nie verantwoordelik vir enige indirekte, toevallige of gevolgskade nie."
+    },
+    "contact": {
+      "title": "Kontakinligting",
+      "text": "Vir vrae oor hierdie bepalings, kontak ons asseblief:",
+      "email": "E-pos"
+    }
+  },
+  "cookiesSettings": {
+    "title": "Koekie-instellings",
+    "what": {
+      "title": "Wat is Koekies?",
+      "text": "Koekies is klein tekslêers wat op jou toestel gestoor word wanneer jy ons webwerf besoek. Hulle help ons om jou 'n beter blaaiervaring te gee en laat ons toe om te ontleed hoe ons webwerf gebruik word."
+    },
+    "types": {
+      "title": "Tipes Koekies Wat Ons Gebruik",
+      "text": "Ons gebruik verskillende tipes koekies vir verskillende doeleindes. Jy kan jou voorkeure hieronder bestuur:"
+    },
+    "essential": {
+      "title": "Noodsaaklike Koekies",
+      "required": "Altyd Vereis",
+      "description": "Hierdie koekies is nodig vir die webwerf om te funksioneer en kan nie gedeaktiveer word nie.",
+      "session": "Sessiebestuur en sekuriteit",
+      "language": "Taalvoorkeure",
+      "security": "Sekuriteit en bedrogvoorkoming"
+    },
+    "analytics": {
+      "title": "Analitika Koekies",
+      "description": "Hierdie koekies help ons verstaan hoe besoekers ons webwerf gebruik sodat ons dit kan verbeter.",
+      "pageViews": "Volg bladsykyke en gewilde inhoud",
+      "userJourney": "Verstaan gebruiker navigasiepatrone",
+      "performance": "Monitor webwerf prestasie"
+    },
+    "marketing": {
+      "title": "Bemarkingskoekies",
+      "description": "Hierdie koekies word gebruik om jou relevante advertensies te wys en veldtog doeltreffendheid te volg.",
+      "targeting": "Gepersonaliseerde advertensies",
+      "social": "Sosiale media integrasie",
+      "remarketing": "Herbemarkingsveldtogte"
+    },
+    "manage": {
+      "title": "Bestuur Jou Voorkeure",
+      "text": "Jy kan jou koekievoorkeure enige tyd verander. Jou keuses sal gestoor en toegepas word op toekomstige besoeke.",
+      "savePreferences": "Stoor Voorkeure",
+      "acceptAll": "Aanvaar Alles",
+      "rejectAll": "Verwerp Alles"
+    },
+    "contact": {
+      "title": "Vrae Oor Koekies?",
+      "text": "As jy enige vrae het oor ons gebruik van koekies, kontak ons asseblief:",
+      "email": "E-pos"
+    }
   }
 }

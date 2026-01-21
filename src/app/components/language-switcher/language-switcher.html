@@ -1,0 +1,29 @@
+<!-- Language Toggle -->
+<div class="relative bg-sage-60 rounded-full p-1 w-60 h-12 mx-auto">
+  <!-- Toggle Background -->
+  <div
+    class="absolute top-1 bottom-1 w-28 bg-sage-20 rounded-full transition-transform duration-300 ease-in-out"
+    [class.translate-x-0]="currentLanguage === 'en'"
+    [class.translate-x-30]="currentLanguage === 'af'"
+  ></div>
+
+  <!-- Toggle Buttons -->
+  <div class="relative flex h-full mx-auto">
+    <button
+      (click)="switchLanguage('en')"
+      class="flex-1 flex items-center justify-center text-sm font-medium transition-colors duration-300"
+      [class.text-sage-60]="currentLanguage === 'en'"
+      [class.text-sage-40]="currentLanguage !== 'en'"
+    >
+      English
+    </button>
+    <button
+      (click)="switchLanguage('af')"
+      class="flex-1 flex items-center justify-center text-sm font-medium transition-colors duration-300"
+      [class.text-sage-60]="currentLanguage === 'af'"
+      [class.text-sage-40]="currentLanguage !== 'af'"
+    >
+      Afrikaans
+    </button>
+  </div>
+</div>

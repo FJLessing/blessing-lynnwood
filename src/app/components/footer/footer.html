@@ -1,25 +1,39 @@
-<footer class="bg-primary-50 text-white py-20 px-16">
+<footer class="bg-primary-50 text-white py-8 lg:py-20 px-4 lg:px-16">
   <div class="flex flex-col items-center gap-20">
     <!-- Content Section -->
-    <div class="flex flex-row justify-center w-full gap-8">
+    <div class="flex flex-col md:flex-row justify-center w-full gap-8">
       <!-- Logo -->
-      <div class="logo flex-1">
-        <img src="assets/images/logo.svg" alt="Blessing@Lynnwood" width="84" height="36">
+      <div class="logo flex-1 self-end hidden md:hidden!">
+        <img src="assets/images/logo.svg" alt="Blessing@Lynnwood" width="84" height="36" />
       </div>
 
       <!-- Navigation Wrapper -->
-      <div class="flex flex-col items-end gap-10">
+      <div class="flex flex-col items-center md:items-end gap-10">
         <!-- Navigation Links -->
         <nav class="flex flex-row items-center gap-10">
-          <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors">Your Stay</a>
-          <a [routerLink]="['/']" fragment="gallery" class="text-body-1 hover:text-sage-30 transition-colors">Gallery</a>
-          <a [routerLink]="['/contact-us']" class="text-body-1 hover:text-sage-30 transition-colors">Contact Us</a>
+          <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors"
+            >{{ 'nav.yourStay' | translate }}</a
+          >
+          <a
+            [routerLink]="['/']"
+            fragment="gallery"
+            class="text-body-1 hover:text-sage-30 transition-colors"
+            >{{ 'nav.gallery' | translate }}</a
+          >
+          <a [routerLink]="['/contact-us']" class="text-body-1 hover:text-sage-30 transition-colors"
+            >{{ 'nav.contact' | translate }}</a
+          >
         </nav>
+
+        <!-- Language Switcher -->
+        <app-language-switcher></app-language-switcher>
 
         <!-- CTA Button -->
         <div class="flex flex-row gap-10">
-          <button class="px-6 py-2.5 bg-sage-50 text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11">
-            Check availability
+          <button
+            class="px-6 py-2.5 bg-sage-50 text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11"
+          >
+            {{ 'nav.checkAvailability' | translate }}
           </button>
         </div>
       </div>
@@ -28,32 +42,25 @@
     <!-- Credits Section -->
     <div class="flex flex-col items-center gap-8 w-full">
       <!-- Divider -->
-      <hr class="w-full border-sage-50">
+      <hr class="w-full border-sage-50" />
 
       <!-- Footer Links -->
       <div class="flex flex-row gap-6">
-        <a href="#privacy" class="text-sm hover:text-sage-30 transition-colors underline">Privacy Policy</a>
-        <a href="#terms" class="text-sm hover:text-sage-30 transition-colors underline">Terms of Service</a>
-        <a href="#cookies" class="text-sm hover:text-sage-30 transition-colors underline">Cookies Settings</a>
-      </div>
-
-      <!-- Language Switcher -->
-      <div class="self-end flex flex-row gap-2">
-        <button
-          (click)="switchLanguage('en')"
-          [class.text-sage-50]="currentLanguage === 'en'"
-          [class.text-sage-80]="currentLanguage !== 'en'"
-          class="px-3 py-2 rounded transition-colors hover:text-sage-30">
-          EN
-        </button>
-        <span class="text-sage-80">/</span>
-        <button
-          (click)="switchLanguage('af')"
-          [class.text-sage-50]="currentLanguage === 'af'"
-          [class.text-sage-80]="currentLanguage !== 'af'"
-          class="px-3 py-2 rounded transition-colors hover:text-sage-30">
-          AF
-        </button>
+        <a
+          routerLink="/privacy-policy"
+          class="text-sm hover:text-sage-30 transition-colors underline"
+          >{{ 'footer.links.privacy' | translate }}</a
+        >
+        <a
+          routerLink="/terms-of-service"
+          class="text-sm hover:text-sage-30 transition-colors underline"
+          >{{ 'footer.links.terms' | translate }}</a
+        >
+        <a
+          routerLink="/cookies-settings"
+          class="text-sm hover:text-sage-30 transition-colors underline"
+          >{{ 'footer.links.cookies' | translate }}</a
+        >
       </div>
     </div>
   </div>

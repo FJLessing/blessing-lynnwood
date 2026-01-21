@@ -202,5 +202,127 @@
     "successText": "Your message has been sent successfully. We'll get back to you soon.",
     "errorTitle": "Error:",
     "copied": "Copied!"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "lastUpdatedDate": "December 2026",
+    "introduction": {
+      "title": "Introduction",
+      "text": "At Blessing@Lynnwood, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or book accommodation with us."
+    },
+    "informationWeCollect": {
+      "title": "Information We Collect",
+      "text": "We may collect the following types of information:",
+      "personalInfo": "Personal identification information (name, address, ID number)",
+      "contactInfo": "Contact information (phone number, email address)",
+      "bookingInfo": "Booking and payment information",
+      "preferences": "Accommodation preferences and special requirements"
+    },
+    "howWeUseInfo": {
+      "title": "How We Use Your Information",
+      "text": "We use your information for the following purposes:",
+      "processBookings": "Process and manage your accommodation bookings",
+      "communicate": "Communicate with you about your stay",
+      "improveServices": "Improve our services and customer experience",
+      "legal": "Comply with legal obligations and requirements"
+    },
+    "dataSharing": {
+      "title": "Information Sharing",
+      "text": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law or to provide the services you have requested."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "text": "If you have any questions about this Privacy Policy, please contact us:",
+      "email": "Email"
+    }
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated",
+    "lastUpdatedDate": "December 2026",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "text": "By booking accommodation with Blessing@Lynnwood, you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, please do not use our services."
+    },
+    "bookingTerms": {
+      "title": "Booking Terms",
+      "text": "The following terms apply to all bookings:",
+      "confirmation": "All bookings are subject to availability and confirmation",
+      "payment": "Full payment is required to secure your booking",
+      "cancellation": "Cancellation policies vary by booking type and date",
+      "noShow": "No-show bookings may result in forfeiture of payment"
+    },
+    "guestResponsibilities": {
+      "title": "Guest Responsibilities",
+      "text": "As a guest, you are responsible for:",
+      "respectProperty": "Treating the property and its contents with respect",
+      "followRules": "Following all property rules and local regulations",
+      "liability": "Any damage caused during your stay",
+      "checkInOut": "Adhering to check-in and check-out times"
+    },
+    "propertyRules": {
+      "title": "Property Rules",
+      "text": "The following rules apply to all guests:",
+      "noSmoking": "No smoking is permitted on the property",
+      "noPets": "Pets are not allowed unless specifically approved",
+      "noParties": "Parties and events are not permitted",
+      "quietHours": "Quiet hours are enforced between 23:00 and 05:00",
+      "maxOccupancy": "Maximum occupancy limits must be respected"
+    },
+    "limitation": {
+      "title": "Limitation of Liability",
+      "text": "Blessing@Lynnwood's liability is limited to the amount paid for your accommodation. We are not responsible for any indirect, incidental, or consequential damages."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "text": "For questions about these terms, please contact us:",
+      "email": "Email"
+    }
+  },
+  "cookiesSettings": {
+    "title": "Cookie Settings",
+    "what": {
+      "title": "What Are Cookies?",
+      "text": "Cookies are small text files stored on your device when you visit our website. They help us provide you with a better browsing experience and allow us to analyze how our website is used."
+    },
+    "types": {
+      "title": "Types of Cookies We Use",
+      "text": "We use different types of cookies for various purposes. You can manage your preferences below:"
+    },
+    "essential": {
+      "title": "Essential Cookies",
+      "required": "Always Required",
+      "description": "These cookies are necessary for the website to function and cannot be disabled.",
+      "session": "Session management and security",
+      "language": "Language preferences",
+      "security": "Security and fraud prevention"
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "These cookies help us understand how visitors use our website so we can improve it.",
+      "pageViews": "Track page views and popular content",
+      "userJourney": "Understand user navigation patterns",
+      "performance": "Monitor website performance"
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "description": "These cookies are used to show you relevant advertisements and track campaign effectiveness.",
+      "targeting": "Personalized advertising",
+      "social": "Social media integration",
+      "remarketing": "Remarketing campaigns"
+    },
+    "manage": {
+      "title": "Manage Your Preferences",
+      "text": "You can change your cookie preferences at any time. Your choices will be saved and applied to future visits.",
+      "savePreferences": "Save Preferences",
+      "acceptAll": "Accept All",
+      "rejectAll": "Reject All"
+    },
+    "contact": {
+      "title": "Questions About Cookies?",
+      "text": "If you have any questions about our use of cookies, please contact us:",
+      "email": "Email"
+    }
   }
 }

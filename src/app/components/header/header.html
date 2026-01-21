@@ -1,29 +1,121 @@
-<header [class]="isStickyHeader() ? 'header-transparent' : 'header-solid'" class="w-screen">
+<header [class]="isStickyHeader() ? 'header-transparent' : 'header-solid'" class="w-screen z-50">
   <div class="flex items-center justify-between w-full">
     <!-- Logo -->
-    <img src="assets/images/logo.svg" alt="Blessing Lynnwood Logo" class="h-17.5 w-auto object-contain" />
+    <img
+      src="assets/images/logo.svg"
+      alt="Blessing Lynnwood Logo"
+      class="h-17.5 w-auto object-contain z-50 relative"
+    />
 
-    <!-- Navigation and CTA -->
-    <div class="flex max-w-[50vw] items-center gap-10">
+    <!-- Desktop Navigation and CTA -->
+    <div class="hidden lg:flex max-w-[50vw] items-center gap-10">
       <!-- Navigation Links -->
       <nav class="flex items-center gap-10">
         <a routerLink="/" class="text-body-1 text-white transition-colors hover:text-sage-50">
           {{ 'nav.home' | translate }}
         </a>
-        <a routerLink="/your-stay" class="text-body-1 text-white transition-colors hover:text-sage-50">
+        <a
+          routerLink="/your-stay"
+          class="text-body-1 text-white transition-colors hover:text-sage-50"
+        >
           {{ 'nav.yourStay' | translate }}
         </a>
-        <a routerLink="/" fragment="gallery" class="text-body-1 text-white transition-colors hover:text-sage-50">
+        <a
+          routerLink="/"
+          fragment="gallery"
+          class="text-body-1 text-white transition-colors hover:text-sage-50"
+        >
           {{ 'nav.gallery' | translate }}
         </a>
-        <a routerLink="/contact-us" class="text-body-1 text-white transition-colors hover:text-sage-50">
+        <a
+          routerLink="/contact-us"
+          class="text-body-1 text-white transition-colors hover:text-sage-50"
+        >
           {{ 'nav.contact' | translate }}
         </a>
       </nav>
 
       <!-- Check Availability Button -->
       <button
-        class="text-button rounded-full border-2 border-sage-50 px-6 py-2.5 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60">
+        class="text-button rounded-full border-2 border-sage-50 px-6 py-2.5 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60"
+      >
+        {{ 'nav.checkAvailability' | translate }}
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="lg:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Toggle menu"
+    >
+      <!-- Hamburger Lines -->
+      <span
+        class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"
+        [class.rotate-45]="mobileMenuOpen()"
+        [class.translate-y-2]="mobileMenuOpen()"
+      ></span>
+      <span
+        class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"
+        [class.opacity-0]="mobileMenuOpen()"
+      ></span>
+      <span
+        class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"
+        [class.-rotate-45]="mobileMenuOpen()"
+        [class.-translate-y-2]="mobileMenuOpen()"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    class="lg:hidden fixed inset-0 bg-primary-60 transition-transform duration-300 ease-in-out z-40"
+    [class.translate-x-0]="mobileMenuOpen()"
+    [class.translate-x-full]="!mobileMenuOpen()"
+  >
+    <div class="flex flex-col h-full justify-center items-center gap-8 px-8">
+      <!-- Mobile Navigation Links -->
+      <nav class="flex flex-col items-center gap-8 mb-3 mt-auto">
+        <a
+          routerLink="/"
+          (click)="closeMobileMenu()"
+          class="text-heading-3 text-white transition-colors hover:text-sage-50"
+        >
+          {{ 'nav.home' | translate }}
+        </a>
+        <a
+          routerLink="/your-stay"
+          (click)="closeMobileMenu()"
+          class="text-heading-3 text-white transition-colors hover:text-sage-50"
+        >
+          {{ 'nav.yourStay' | translate }}
+        </a>
+        <a
+          routerLink="/"
+          fragment="gallery"
+          (click)="closeMobileMenu()"
+          class="text-heading-3 text-white transition-colors hover:text-sage-50"
+        >
+          {{ 'nav.gallery' | translate }}
+        </a>
+        <a
+          routerLink="/contact-us"
+          (click)="closeMobileMenu()"
+          class="text-heading-3 text-white transition-colors hover:text-sage-50"
+        >
+          {{ 'nav.contact' | translate }}
+        </a>
+      </nav>
+
+      <!-- Mobile Language Switcher -->
+      <app-language-switcher></app-language-switcher>
+
+      <!-- Mobile CTA Button -->
+      <button
+        (click)="closeMobileMenu()"
+        class="text-heading-4 rounded-full border-2 border-sage-50 px-8 py-4 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60 mt-auto mb-12"
+      >
         {{ 'nav.checkAvailability' | translate }}
       </button>
     </div>

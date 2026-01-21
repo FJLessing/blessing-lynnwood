@@ -1,19 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { LanguageSwitcher } from '../language-switcher/language-switcher';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslateModule, RouterLink],
+  imports: [TranslateModule, RouterLink, LanguageSwitcher],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
 export class Footer {
   private translate = inject(TranslateService);
-  currentLanguage = this.translate.currentLang || 'en';
-
-  switchLanguage(lang: string) {
-    this.translate.use(lang);
-    this.currentLanguage = lang;
-  }
 }
