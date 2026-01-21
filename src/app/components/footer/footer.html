@@ -8,7 +8,7 @@
       </div>
 
       <!-- Navigation Wrapper -->
-      <div class="flex flex-col items-center md:items-end gap-10">
+      <div class="flex flex-col items-center md:items-end gap-10 lg:w-full max-w-7xl">
         <!-- Navigation Links -->
         <nav class="flex flex-row items-center gap-10">
           <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors"
@@ -25,16 +25,19 @@
           >
         </nav>
 
-        <!-- Language Switcher -->
-        <app-language-switcher></app-language-switcher>
+        <!-- Footer Contents -->
+        <div class="flex flex-col items-center lg:flex-row lg:justify-between lg:w-full gap-10">
+          <!-- Language Switcher -->
+          <app-language-switcher></app-language-switcher>
 
-        <!-- CTA Button -->
-        <div class="flex flex-row gap-10">
-          <button
-            class="px-6 py-2.5 bg-sage-50 text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11"
-          >
-            {{ 'nav.checkAvailability' | translate }}
-          </button>
+          <!-- CTA Button -->
+          <div class="flex flex-row gap-10">
+            <button
+              class="px-6 py-2.5 bg-sage-50 text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11"
+            >
+              {{ 'nav.checkAvailability' | translate }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
