@@ -130,14 +130,15 @@
         }">
         @for (place of nearbyPlaces; track place.nameKey) {
         <swiper-slide>
-          <div class="rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col">
+          <a class="block rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col"
+            href="{{ place.link }}" target="_blank" rel="noopener noreferrer">
             <div class="h-[180px] flex items-center justify-center" [class]="place.bgColor ?? 'bg-white'">
               <img [src]="place.image" [alt]="place.nameKey | translate" class="min-h-full min-w-full object-cover" />
             </div>
             <div class="bg-tan-60 px-2.5 py-4 text-center">
               <span class="text-white text-xs lg:text-md">{{ place.nameKey | translate }}</span>
             </div>
-          </div>
+          </a>
         </swiper-slide>
         }
       </swiper-container>
