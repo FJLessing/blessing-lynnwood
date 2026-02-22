@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 import ICAL from 'ical.js';
 
 interface DayObj {
@@ -19,7 +20,7 @@ interface DayObj {
 
 @Component({
   selector: 'app-availability',
-  imports: [DatePipe],
+  imports: [DatePipe, TranslateModule],
   templateUrl: './availability.html',
   styleUrl: './availability.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,7 +29,15 @@ export class Availability implements OnInit {
   readonly currentDate = signal(new Date());
   readonly daysInMonth = signal<DayObj[]>([]);
   readonly bookedRanges = signal<{ start: Date; end: Date }[]>([]);
-  readonly weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  readonly weekdays = [
+    'booking.calendar.days.sun',
+    'booking.calendar.days.mon',
+    'booking.calendar.days.tue',
+    'booking.calendar.days.wed',
+    'booking.calendar.days.thu',
+    'booking.calendar.days.fri',
+    'booking.calendar.days.sat',
+  ];
   readonly checkIn = signal<Date | null>(null);
   readonly checkOut = signal<Date | null>(null);
 

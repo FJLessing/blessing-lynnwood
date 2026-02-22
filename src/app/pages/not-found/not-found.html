@@ -1,7 +1,7 @@
 <div class="text-center p-24">
   <h1 class="text-4xl font-bold">404</h1>
-  <p class="text-lg mt-4">Sorry, we couldn't find that page.</p>
+  <p class="text-lg mt-4">{{ 'notFound.message' | translate }}</p>
   <a routerLink="/" class="mt-8 inline-block bg-green-700 text-white px-6 py-3 rounded-md">
-    Go to Homepage
+    {{ 'notFound.goHome' | translate }}
   </a>
 </div>

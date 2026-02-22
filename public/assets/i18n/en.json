@@ -18,7 +18,7 @@
       "Whether you're here for a school event, a night at the theatre, or an important business trip, you'll find everything you need for a comfortable stay.",
       "Enjoy your own space with self-catering facilities, great Wi-Fi, and secure parking. It's easy, relaxed, and just feels like home."
     ],
-    "findUs": "You can find us here"
+    "link": "You can find us here"
   },
   "gallery": {
     "title": "Your own",
@@ -53,6 +53,8 @@
   },
   "booking": {
     "title": "Ready to book your stay?",
+    "titleAccent": "Ready",
+    "titleRemainder": "to book your stay?",
     "subtitle": "Feel free to check our availability below and book easily.",
     "legend": {
       "booked": "booked",
@@ -166,6 +168,10 @@
       "glenfairBoulevard": "Glenfair Boulevard",
       "pretoriaCountryClub": "Pretoria Country Club"
     }
+  },
+  "notFound": {
+    "message": "Sorry, we couldn't find that page.",
+    "goHome": "Go to Homepage"
   },
   "footer": {
     "links": {

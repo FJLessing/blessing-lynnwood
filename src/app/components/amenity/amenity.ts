@@ -15,7 +15,7 @@ export interface AmenityItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class:
-      'flex flex-col justify-center items-center p-8 bg-sage-40 rounded-lg text-white w-full md:w-[25.75rem] h-[12.375rem]',
+      'flex flex-col justify-center items-center p-8 bg-sage rounded-lg text-white w-full md:w-[25.75rem] h-[12.375rem]',
   },
 })
 export class Amenity {

@@ -18,7 +18,7 @@
       "Of jy hier is vir 'n skoolbyeenkoms, 'n aand by die teater, of 'n belangrike sakereis, sal jy alles vind wat jy nodig het vir 'n gemaklike verblyf.",
       "Geniet jou eie ruimte met selfsorg-geriewe, uitstekende Wi-Fi, en veilige parkering. Dit is maklik, ontspanne, en voel net soos tuis."
     ],
-    "findUs": "Jy kan ons hier vind"
+    "link": "Vind ons hier"
   },
   "gallery": {
     "title": "Jou eie",
@@ -53,6 +53,8 @@
   },
   "booking": {
     "title": "Gereed om jou verblyf te bespreek?",
+    "titleAccent": "Gereed",
+    "titleRemainder": "om jou verblyf te bespreek?",
     "subtitle": "Voel vry om ons beskikbaarheid hieronder te kontroleer en maklik te bespreek.",
     "legend": {
       "booked": "bespreek",
@@ -166,6 +168,10 @@
       "glenfairBoulevard": "Glenfair Boulevard",
       "pretoriaCountryClub": "Pretoria Country Club"
     }
+  },
+  "notFound": {
+    "message": "Jammer, ons kon nie daardie bladsy vind nie.",
+    "goHome": "Gaan na Tuisblad"
   },
   "footer": {
     "links": {

@@ -1,8 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { LastWordFancyPipe } from '../../pipes/last-word-fancy-pipe';
+import { environment } from '../../../environments/environment';
 
 interface StayInfoItem {
   icon: string;
@@ -16,7 +17,7 @@ interface StayInfoItem {
   templateUrl: './your-stay.html',
   styleUrl: './your-stay.css',
 })
-export class YourStay implements OnInit {
+export class YourStay {
   private sanitizer = inject(DomSanitizer);
 
   infoItems: StayInfoItem[] = [
@@ -32,20 +33,9 @@ export class YourStay implements OnInit {
     { icon: 'pet-paw', translationKey: 'yourStay.info.pets' },
   ];
 
-  googleMapsUrl: SafeResourceUrl | null = null;
-
-  async ngOnInit(): Promise<void> {
-    try {
-      const res = await fetch('/assets/env.json');
-      if (!res.ok) return;
-      const data = await res.json();
-      const key = data.GOOGLE_MAPS_API_KEY;
-      if (!key) return;
-      this.googleMapsUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        `https://www.google.com/maps/embed/v1/place?key=${key}&q=358+Elizabeth+Grove+South,+Pretoria,+South+Africa,+0081`,
-      );
-    } catch {
-      return;
-    }
-  }
+  googleMapsUrl: SafeResourceUrl | null = environment.googleMapsApiKey
+    ? this.sanitizer.bypassSecurityTrustResourceUrl(
+        `https://www.google.com/maps/embed/v1/place?key=${environment.googleMapsApiKey}&q=358+Elizabeth+Grove+South,+Pretoria,+South+Africa,+0081`,
+      )
+    : null;
 }

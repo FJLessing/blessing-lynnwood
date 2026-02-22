@@ -19,6 +19,7 @@ export interface NearbyPlace {
   nameKey: string;
   image: string;
   bgColor?: string;
+  link?: string;
 }
 
 @Component({
@@ -245,43 +246,82 @@ export class Home {
   ];
 
   nearbyPlaces: NearbyPlace[] = [
-    { nameKey: 'nearby.locations.atterbury', image: 'assets/images/card/atterbury.webp' },
+    {
+      nameKey: 'nearby.locations.atterbury',
+      image: 'assets/images/card/atterbury.webp',
+      link: 'https://www.google.com/viewer/place?mid=/g/1hhh5cnhy&sa=X&ved=2ahUKEwjT9fOZ6e2SAxXC0AIHHWmsC8EQqdYPegYIAQgIEAI',
+    },
     {
       nameKey: 'nearby.locations.lynnwoodBridge',
       image: 'assets/images/card/lynnwood-bridge.webp',
+      link: 'https://lynnwoodbridge.co.za/',
     },
-    { nameKey: 'nearby.locations.botanicalGardens', image: 'assets/images/card/pnbg.webp' },
-    { nameKey: 'nearby.locations.csir', image: 'assets/images/card/csir.webp' },
+    {
+      nameKey: 'nearby.locations.botanicalGardens',
+      image: 'assets/images/card/pnbg.webp',
+      link: 'https://www.google.com/viewer/place?mid=/m/04ljb3l&sa=X&ved=2ahUKEwjT9fOZ6e2SAxXC0AIHHWmsC8EQqdYPegYIAQgIEA0',
+    },
+    {
+      nameKey: 'nearby.locations.csir',
+      image: 'assets/images/card/csir.webp',
+      link: 'https://www.csir.co.za/',
+    },
     {
       nameKey: 'nearby.locations.laerskoolLynnwood',
       image: 'assets/images/card/laerskool-lynnwood.webp',
+      link: 'https://www.lynnwoodlaer.co.za/',
     },
-    { nameKey: 'nearby.locations.menloPark', image: 'assets/images/card/menlopark.webp' },
+    {
+      nameKey: 'nearby.locations.menloPark',
+      image: 'assets/images/card/menlopark.webp',
+      link: 'https://www.menlopark.co.za/',
+    },
     {
       nameKey: 'nearby.locations.unionBuildings',
       image: 'assets/images/card/union-buildings.webp',
+      link: 'https://www.thepresidency.gov.za/union-buildings',
     },
     {
       nameKey: 'nearby.locations.brooklynMall',
       image: 'assets/images/card/brooklyn.webp',
       bgColor: 'bg-black',
+      link: 'https://www.brooklynmall.co.za/',
     },
-    { nameKey: 'nearby.locations.menlynMall', image: 'assets/images/card/menlyn.webp' },
+    {
+      nameKey: 'nearby.locations.menlynMall',
+      image: 'assets/images/card/menlyn.webp',
+      link: 'https://www.menlynpark.co.za/',
+    },
     {
       nameKey: 'nearby.locations.voortrekkerMonument',
       image: 'assets/images/card/voortrekker-monument.webp',
       bgColor: 'bg-[#25404d]',
+      link: 'https://vtm.org.za/en/home/',
     },
-    { nameKey: 'nearby.locations.timesSquare', image: 'assets/images/card/time-square.webp' },
+    {
+      nameKey: 'nearby.locations.timesSquare',
+      image: 'assets/images/card/time-square.webp',
+      link: 'https://www.suninternational.com/time-square/sunbet-arena/',
+    },
     {
       nameKey: 'nearby.locations.universityOfPretoria',
       image: 'assets/images/card/university-of-pretoria.webp',
+      link: 'https://www.up.ac.za/',
     },
-    { nameKey: 'nearby.locations.loftusPark', image: 'assets/images/card/loftus-park.webp' },
+    {
+      nameKey: 'nearby.locations.loftusPark',
+      image: 'assets/images/card/loftus-park.webp',
+      link: 'https://loftuspark.co.za/',
+    },
     {
       nameKey: 'nearby.locations.glenfairBoulevard',
       image: 'assets/images/card/glenfair-boulevard.webp',
+      link: 'https://www.shopglenfairboulevard.co.za/',
     },
-    { nameKey: 'nearby.locations.pretoriaCountryClub', image: 'assets/images/card/pcc.webp' },
+    {
+      nameKey: 'nearby.locations.pretoriaCountryClub',
+      image: 'assets/images/card/pcc.webp',
+      link: 'https://ptacc.co.za/',
+    },
   ];
 }
