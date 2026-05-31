@@ -58,13 +58,21 @@ export class GalleryCarousel implements AfterViewInit {
         ? { delay: this.slideInterval(), disableOnInteraction: true }
         : false,
       breakpoints: {
-        0: { slidesOffsetBefore: 16, slidesOffsetAfter: 16 },
-        640: { slidesOffsetBefore: 64, slidesOffsetAfter: 64 },
+        0: { slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
+        640: { slidesOffsetBefore: 12, slidesOffsetAfter: 0 },
       },
+      observer: true,
+      observeSlideChildren: true,
+      resizeObserver: true,
       on: {
         slideChange: (swiper: Swiper) => {
-          this.currentSlide.set(swiper.activeIndex);
-          this.currentIndexChange.emit(swiper.activeIndex);
+          // Only update the signal if the index actually changed (prevents
+          // focusSlide + slideTo from fighting over the same index).
+          if (swiper.activeIndex !== this.currentSlide()) {
+            this.currentSlide.set(swiper.activeIndex);
+            this.currentIndexChange.emit(swiper.activeIndex);
+          }
+          this.reflowDuringExpand(swiper.activeIndex);
         },
       },
     };
@@ -72,6 +80,42 @@ export class GalleryCarousel implements AfterViewInit {
     Object.assign(el, swiperParams);
     el.initialize();
     this.swiperInstance = el.swiper;
+  }
+
+  focusSlide(index: number) {
+    // Set focus state directly so the clicked card expands immediately,
+    // regardless of how Swiper resolves activeIndex with variable widths.
+    this.currentSlide.set(index);
+    this.currentIndexChange.emit(index);
+    this.swiperInstance?.autoplay?.stop();
+    // Smooth scroll to the clicked slide, matching the CSS width transition
+    // duration (300 ms) so the scroll and the expand stay in sync.
+    this.swiperInstance?.slideTo(index, 300);
+    this.reflowDuringExpand(index);
+  }
+
+  /**
+   * The active slide animates its width (collapsed spine -> full). Swiper caches
+   * slide sizes/positions for `slidesPerView: 'auto'`, so without recalculating
+   * the expanded card overflows and gets clipped by its neighbours. Recompute the
+   * layout each frame for the duration of the CSS width transition.
+   */
+  private reflowDuringExpand(index: number) {
+    const swiper = this.swiperInstance;
+    if (!swiper) return;
+
+    const duration = 320; // CSS transition is 300ms + small buffer
+    const start = performance.now();
+
+    const step = (now: number) => {
+      if (!this.swiperInstance) return;
+      this.swiperInstance.update();
+      if (now - start < duration) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
   }
 
   next() {

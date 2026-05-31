@@ -1,51 +1,35 @@
-<footer class="bg-primary-50 text-white py-8 lg:py-20 px-4 lg:px-16">
+<footer class="bg-blessing-gradient text-white py-8 lg:py-20 px-4 lg:px-16">
   <div class="flex flex-col items-center gap-20">
     <!-- Content Section -->
     <div class="flex flex-col md:flex-row justify-center w-full gap-8">
 
       <!-- Navigation Wrapper -->
-      <div class="flex flex-col items-center md:items-end gap-10 lg:w-full max-w-7xl">
-        <!-- Navigation Links -->
-        <nav class="flex flex-row items-center gap-10">
-          <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors">{{ 'nav.yourStay' |
-            translate }}</a>
-          <a [routerLink]="['/']" fragment="gallery" class="text-body-1 hover:text-sage-30 transition-colors">{{
-            'nav.gallery' | translate }}</a>
-          <a [routerLink]="['/contact-us']" class="text-body-1 hover:text-sage-30 transition-colors">{{ 'nav.contact' |
-            translate }}</a>
-        </nav>
-
-        <!-- Footer Contents -->
-        <div class="flex flex-col items-center lg:flex-row lg:justify-between lg:w-full gap-10">
+      <div class="flex justify-end items-center gap-10 lg:w-full">
           <!-- Logo -->
-          <div class="logo flex-1 self-end hidden md:hidden!">
-            <img src="assets/images/logo.svg" alt="Blessing@Lynnwood" width="120" height="48" />
+          <div class="logo flex-1 self-end ml-0 mr-auto">
+            <img src="assets/images/footer-logo.webp" alt="Blessing@Lynnwood" width="240" height="96" />
           </div>
 
-          <!-- Logos for partners -->
-          <div class="flex flex-row items-center gap-6">
-            <a href="https://www.booking.com/hotel/za/myblessing-apartment-guest-rooms.en-gb.htm" target="_blank"
-              rel="noopener noreferrer">
-              <img src="assets/images/logo-booking-dot-com.svg" alt="Booking.com Logo" width="120" height="40" />
-            </a>
-            <a href="https://www.lekkeslaap.co.za/akkommodasie/blessing-gastekamer" target="_blank"
-              rel="noopener noreferrer">
-              <img src="assets/images/logo-lekke-slaap.svg" alt="Lekker Slaap Logo" width="120" height="40" />
-            </a>
-          </div>
-
-
-          <!-- Language Switcher -->
-          <app-language-switcher></app-language-switcher>
+          <!-- Navigation Links -->
+          <nav class="flex flex-row items-center gap-10">
+            <a [routerLink]="['/your-stay']" class="text-body-1 hover:text-sage-30 transition-colors">{{ 'nav.yourStay' |
+              translate }}</a>
+            <a [routerLink]="['/']" fragment="gallery" class="text-body-1 hover:text-sage-30 transition-colors">{{
+              'nav.gallery' | translate }}</a>
+            <a [routerLink]="['/contact-us']" class="text-body-1 hover:text-sage-30 transition-colors">{{ 'nav.contact' |
+              translate }}</a>
+          </nav>
 
           <!-- CTA Button -->
           <div class="flex flex-row gap-10">
             <button
-              class="px-6 py-2.5 bg-sage-50 text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11">
+              class="px-6 py-2.5 bg-transparent text-button rounded-full border-2 border-sage-50 hover:bg-sage-60 transition-colors h-11">
               {{ 'nav.checkAvailability' | translate }}
             </button>
           </div>
-        </div>
+
+          <!-- Language Switcher -->
+          <app-language-switcher></app-language-switcher>
       </div>
     </div>
 

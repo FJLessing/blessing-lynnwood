@@ -1,4 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { GalleryCarousel, CarouselSlide } from '../../components/gallery-carousel/gallery-carousel';
 import { Amenity, AmenityItem } from '../../components/amenity/amenity';
@@ -24,7 +25,7 @@ export interface NearbyPlace {
 
 @Component({
   selector: 'app-home',
-  imports: [TranslateModule, GalleryCarousel, Amenity, Availability],
+  imports: [TranslateModule, RouterLink, GalleryCarousel, Amenity, Availability],
   templateUrl: './home.html',
   styleUrl: './home.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -225,7 +226,7 @@ export class Home {
     {
       rating: 5,
       title: 'Exceptional',
-      body: 'reviews.items.exceptional',
+      body: 'This spacious establishment that offers a seperate lounge, seperate toilet and a full bathroom, is in a safe and good area, close to highways, shops and restaurants...',
       author: 'Laans',
       date: 'March 2025',
     },

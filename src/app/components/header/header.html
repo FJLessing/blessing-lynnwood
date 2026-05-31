@@ -1,14 +1,14 @@
 <header [class]="isStickyHeader() ? 'header-transparent' : 'header-solid'" class="w-screen z-50">
-  <div class="flex items-center justify-between w-full">
+  <div class="flex items-center justify-end w-full">
     <!-- Logo -->
-    <a href="/" title="{{ 'nav.home' | translate }} ">
+    <a class="mr-auto" href="/" title="{{ 'nav.home' | translate }} ">
 
       <img src="assets/images/horizontal-logo.webp" alt="Blessing Lynnwood Logo"
-        class="h-17.5 w-auto object-contain z-50 relative" />
+        class="h-18 w-auto object-contain z-50 relative" />
     </a>
 
     <!-- Desktop Navigation and CTA -->
-    <div class="hidden lg:flex max-w-[50vw] items-center gap-10">
+    <div class="hidden lg:flex max-w-[50vw] ml-auto items-center gap-10">
       <!-- Navigation Links -->
       <nav class="flex items-center gap-10">
         <a routerLink="/your-stay" class="text-body-1 text-white transition-colors hover:text-sage-50">
@@ -24,13 +24,15 @@
 
       <!-- Check Availability Button -->
       <button
+        routerLink="/"
+        fragment="booking"
         class="text-button rounded-full border-2 border-sage-50 px-6 py-2.5 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60">
         {{ 'nav.checkAvailability' | translate }}
       </button>
     </div>
 
     <!-- Mobile Menu Button -->
-    <button class="lg:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5"
+    <button class="lg:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 mr-8"
       (click)="toggleMobileMenu()" [attr.aria-expanded]="mobileMenuOpen()" aria-label="Toggle menu">
       <!-- Hamburger Lines -->
       <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out" [class.rotate-45]="mobileMenuOpen()"
@@ -40,6 +42,10 @@
       <span class="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out" [class.-rotate-45]="mobileMenuOpen()"
         [class.-translate-y-2]="mobileMenuOpen()"></span>
     </button>
+
+    <!-- Language Switcher -->
+    <app-language-switcher class="ml-8"></app-language-switcher>
+
   </div>
 
   <!-- Mobile Menu Overlay -->
@@ -70,7 +76,10 @@
       <app-language-switcher></app-language-switcher>
 
       <!-- Mobile CTA Button -->
-      <button (click)="closeMobileMenu()"
+      <button
+        (click)="closeMobileMenu()"
+        routerLink="/"
+        fragment="booking"
         class="text-heading-4 rounded-full border-2 border-sage-50 px-8 py-4 text-sage-50 transition-all hover:bg-sage-50 hover:text-primary-60 mt-auto mb-12">
         {{ 'nav.checkAvailability' | translate }}
       </button>

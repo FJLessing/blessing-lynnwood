@@ -22,24 +22,25 @@
     class="about-us shadow-elevation-outer relative bg-cover bg-center bg-no-repeat text-white min-h-screen flex justify-center items-center overflow-clip">
     <img src="assets/images/backdrop-grass.webp" alt="Image of a beautiful grassy hedge."
       class="absolute inset-0 min-w-full min-h-full object-cover z-1" />
-    <div class="bg-black/70 absolute inset-0 w-full h-full object-cover z-1"></div>
-    <div class="shadow-elevation bg-sage-transparent rounded-2xl m-auto p-12 text-center z-2">
-      <h2 class="text-5xl font-thin mb-8">{{ 'about.title' | translate }}</h2>
+    <div class="bg-black/80 absolute inset-0 w-full h-full object-cover z-1"></div>
+    <div class="shadow-elevation bg-sage-transparent rounded-2xl m-auto p-12 md:p-24 text-center z-2">
+      <h2 class="text-6xl font-thin mb-8">{{ 'about.title' | translate }}</h2>
       @for (paragraph of 'about.description' | translate; track $index) {
       <p class="text-xl max-w-2xl xl:max-w-4xl mb-6 xl:my-12">{{ paragraph }}</p>
       }
       <a routerLink="/your-stay"
-        class="rounded-3xl bg-sage-40 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block">{{
+        class="rounded-3xl bg-sage-50 hover:bg-sage-60 text-white transition-colors px-6 py-2 inline-block">{{
         'about.link' | translate }}
-        <img class="inline-block fill-white" src="assets/images/icons/location.svg" /></a>
+        <img class="inline-block fill-white" src="assets/images/icons/location.svg" />
+      </a>
     </div>
   </section>
 
   <!--- Gallery Section -->
   <section id="gallery" class="w-full py-32 px-4 md:px-20 flex flex-col gap-10 overflow-hidden bg-blessing-gradient">
     <!-- Header -->
-    <div class="flex items-end gap-3 max-w-7xl mr-auto w-full mb-14">
-      <h3 class="text-heading-3 text-white flex-1">{{ 'gallery.title' | translate }}</h3>
+    <div class="flex items-end gap-3 max-w-2xl mr-auto w-full mb-14">
+      <h3 class="text-heading-3 text-white flex-1 whitespace-pre">{{ 'gallery.title' | translate }}</h3>
       <div class="border-b-2 border-[#CFBB9A33] h-2 basis-2/3 grow shrink-0"></div>
       <h2 class="text-heading-2-accent text-white flex-1">{{ 'gallery.subtitle' | translate }}</h2>
     </div>
@@ -130,7 +131,7 @@
         }">
         @for (place of nearbyPlaces; track place.nameKey) {
         <swiper-slide>
-          <a class="block rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col"
+          <a class="rounded-2xl border border-gray-200 shadow-elevation overflow-hidden flex flex-col"
             href="{{ place.link }}" target="_blank" rel="noopener noreferrer">
             <div class="h-[180px] flex items-center justify-center" [class]="place.bgColor ?? 'bg-white'">
               <img [src]="place.image" [alt]="place.nameKey | translate" class="min-h-full min-w-full object-cover" />

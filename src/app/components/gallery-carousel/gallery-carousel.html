@@ -1,13 +1,24 @@
-<div class="w-full flex flex-col items-end gap-6">
+<div class="w-full flex flex-col items-end">
   <!-- Swiper Container -->
   <swiper-container #swiperEl init="false" class="w-full" (mouseenter)="pause()" (mouseleave)="resume()">
     @for (slide of slides(); track $index) {
     <swiper-slide class="w-auto!">
-      <div class="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ease-out"
-        [class.opacity-100]="$index === currentSlide()" [class.opacity-60]="$index !== currentSlide()"
-        [class.scale-[1.02]]="$index === currentSlide()" [class.scale-100]="$index !== currentSlide()">
+      <div class="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ease"
+        [ngClass]="{
+          'w-auto': $index === currentSlide(),
+          'w-36 md:w-54': $index !== currentSlide(),
+          'opacity-100 scale-[1.02]': $index === currentSlide(),
+          'opacity-60 scale-100': $index !== currentSlide()
+        }"
+        (click)="focusSlide($index)">
         <img [ngSrc]="slide.src" [width]="slide.width" [height]="slide.height"
-          class="block h-[50vh] sm:h-[60vh] md:h-[70vh] w-auto object-contain" [alt]="slide.alt" priority>
+          class="block h-72 sm:h-87.5 md:h-104 transition-all duration-300 ease"
+          [class.w-auto]="$index === currentSlide()"
+          [class.w-full]="$index !== currentSlide()"
+          [class.object-contain]="$index === currentSlide()"
+          [class.object-cover]="$index !== currentSlide()"
+          [class.object-center]="$index !== currentSlide()"
+          [alt]="slide.alt" priority>
         <!-- Overlay for inactive slides -->
         <div class="pointer-events-none absolute inset-0 bg-black/20 transition-opacity duration-300"
           [class.opacity-0]="$index === currentSlide()" [class.opacity-100]="$index !== currentSlide()"></div>

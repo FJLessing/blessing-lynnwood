@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
   /* Font Families */
   --font-family-primary: 'Outfit', sans-serif;
@@ -187,6 +188,10 @@
 
 /* Global Base Styles */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     font-family: var(--font-family-primary);
